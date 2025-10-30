@@ -1,0 +1,48 @@
+the color code for the website is here 
+
+/* CSS HEX */
+--surf-crest: #d7e9da;
+--spring-rain: #a3ccac;
+--gum-leaf: #acd4b4;
+--fruit-salad: #54a464;
+--de-york: #8cc097;
+--aqua-forest: #74b27f;
+--spring-rain: #9ccca4;
+--aqua-forest: #63ac72;
+--de-york: #7cbc8c;
+
+
+/* SCSS HEX */
+$surf-crest: #d7e9da;
+$spring-rain: #a3ccac;
+$gum-leaf: #acd4b4;
+$fruit-salad: #54a464;
+$de-york: #8cc097;
+$aqua-forest: #74b27f;
+$spring-rain: #9ccca4;
+$aqua-forest: #63ac72;
+$de-york: #7cbc8c;
+
+
+/* SCSS RGB */
+--surf-crest: rgba(215,233,218,1);
+--spring-rain: rgba(163,204,172,1);
+--gum-leaf: rgba(172,212,180,1);
+--fruit-salad: rgba(84,164,100,1);
+--de-york: rgba(140,192,151,1);
+--aqua-forest: rgba(116,178,127,1);
+--spring-rain: rgba(156,204,164,1);
+--aqua-forest: rgba(99,172,114,1);
+--de-york: rgba(124,188,140,1);
+
+
+/--code--/
+
+
+/* CSV */
+d7e9da,a3ccac,acd4b4,54a464,8cc097,74b27f,9ccca4,63ac72,7cbc8c
+
+/* Array */
+["d7e9da","a3ccac","acd4b4","54a464","8cc097","74b27f","9ccca4","63ac72","7cbc8c"]
+
+
