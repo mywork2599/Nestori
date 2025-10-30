@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nestori</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
+  <link rel="manifest" href="favicon_Nestori/site.webmanifest">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item"><a class="nav-link" href="RoommateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">Landlord Portal</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">Tenant Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Login / Signup Modal ===== -->
+    <div id="authModal" class="auth-modal">
+      <div class="auth-content">
+        <span class="close-btn">&times;</span>
+          <h2 id="modalTitle">Login to Nestori</h2>
+
+          <form id="authForm">
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Login</button>
+
+            <p class="switch-text">
+                Don’t have an account?
+                <a href="#" id="switchToSignup">Sign Up</a>
+            </p>
+          </form>
+      </div>
+    </div>
+
+        <script>
+          const authModal = document.getElementById('authModal');
+          const loginBtn = document.getElementById('loginBtn');
+          const signupBtn = document.getElementById('signupBtn');
+          const closeBtn = document.querySelector('.close-btn');
+          const switchToSignup = document.getElementById('switchToSignup');
+          const modalTitle = document.getElementById('modalTitle');
+          const btnSubmit = document.querySelector('.btn-submit');
+
+        // Open modal for Login
+          loginBtn.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+            modalTitle.textContent = 'Login to Nestori';
+            btnSubmit.textContent = 'Login';
+            switchToSignup.innerHTML = 'Sign Up';
+          });
+
+        // Open modal for Signup
+          signupBtn.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+            modalTitle.textContent = 'Create Your Account';
+            btnSubmit.textContent = 'Sign Up';
+            switchToSignup.innerHTML = 'Login';
+          });
+
+        // Switch between login/signup inside modal
+          switchToSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+              if (modalTitle.textContent.includes('Login')) {
+                  modalTitle.textContent = 'Create Your Account';
+                  btnSubmit.textContent = 'Sign Up';
+                  switchToSignup.innerHTML = 'Login';
+                 } else {
+                  modalTitle.textContent = 'Login to Nestori';
+                  btnSubmit.textContent = 'Login';
+                  switchToSignup.innerHTML = 'Sign Up';
+                }
+            });
+
+        // Close modal
+          closeBtn.addEventListener('click', () => {
+              authModal.style.display = 'none';
+          });
+
+          window.addEventListener('click', (e) => {
+            if (e.target === authModal) authModal.style.display = 'none';
+          });
+        </script>
+
+  <!-- ===== End of Modal ===== -->
+
+
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-content">
+      <h1 class="display-4">Welcome to <span class="logo-text">Nestori</span></h1>
+      <p class="lead">Find Your Nest, Write Your Story.</p>
+
+     <form class="search-bar mt-4" onsubmit="handleSearch(event)">
+  <!-- City Dropdown -->
+  <div class="dropdown">
+    <button type="button" class="dropdown-btn" id="dropdownBtn">
+      <span id="selectedCity">Select City</span>
+      <span class="arrow">▼</span>
+    </button>
+    <ul class="dropdown-list" id="dropdownList">
+      <li>Mumbai</li>
+      <li>Delhi</li>
+      <li>Bangalore</li>
+      <li>Hyderabad</li>
+      <li>Pune</li>
+      <li>Chennai</li>
+      <li>Kolkata</li>
+    </ul>
+  </div>
+
+  <!-- Property Type Toggle Buttons -->
+  <div class="property-type-group">
+    <button type="button" class="property-type-btn active" data-type="PG / Hostel">PG / Hostel</button>
+    <button type="button" class="property-type-btn" data-type="Flat / Apartment">Flat / Apartment</button>
+    <button type="button" class="property-type-btn" data-type="Independent House">Independent House</button>
+    <button type="button" class="property-type-btn" data-type="Office Space">Office Space</button>
+  </div>
+
+  <!-- Search Input -->
+  <input type="text" id="searchInput" placeholder="Search by landmark, area, or pincode..." />
+
+  <!-- Search Button -->
+  <button type="submit" class="search-btn">🔍 Search</button>
+</form>
+
+
+  <section class="dual-section-full">
+    <div class="dual-half left-half">
+      <h3>Our Features</h3>
+      <p>Find properties that match your preferences quickly and reliably.</p>
+      <button class="dual-btn">Explore Features</button>
+    </div>
+
+    <div class="dual-half right-half">
+      <h3>Why Choose Nestori</h3>
+      <p>Our platform intelligently connects you with listings that best fit your preferences.</p>
+      <button class="dual-btn">Know More</button>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- CTA -->
+  <section class="cta-section text-center py-5">
+    <h2>Are You a Landlord?</h2>
+    <p>Join Nestori and list your property for free!</p>
+    <a href="#" class="btn btn-light">List Your Property</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-3 text-center">
+    <p class="mb-0">© 2025 Nestori. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="mainscript.js"></script>
+</body>
+</html>

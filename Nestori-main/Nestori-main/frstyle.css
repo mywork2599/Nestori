@@ -1,0 +1,107 @@
+
+body {
+    background-color: #f8f9fa;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.card-body {
+    padding: 1.5rem;
+}
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.navbar-brand { 
+    font-weight: 400;
+    color: #54a464;
+    font-style: normal;
+}
+
+
+/* Additional styling for rental listings */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.property-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.property-carousel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.property-carousel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: none;
+}
+
+.property-carousel img.active {
+  display: block;
+}
+
+.property-info {
+  padding: 16px;
+}
+
+.property-info h5 {
+  font-weight: 700;
+  color: #222;
+}
+
+.property-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.property-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.rating {
+  background: #e7f8ec;
+  color: #54a464;
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.badge {
+  background: #54a464;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 10px;
+}

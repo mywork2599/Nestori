@@ -1,0 +1,568 @@
+/* ------------------------------------
+   FONT STYLES
+------------------------------------ */
+
+/* Primary Font - Lato */
+body, p, h1, h2, h3, h4, h5, h6, a, li, button, input {
+  font-family: "Lato", sans-serif;
+  color: #333;
+}
+
+/* Logo Font - Monoton */
+.navbar-brand, .cmplogo {
+  font-family: "Monoton", sans-serif;
+  color: #54a464 !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ------------------------------------
+   GENERAL STYLES
+------------------------------------ */
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: #54a464;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-family: "Lato", sans-serif;
+}
+
+.btn:hover {
+  background-color: #469055;
+  transform: scale(1.05);
+}
+
+/* ------------------------------------
+   NAVBAR
+------------------------------------ */
+
+.navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: 16px;
+  color: #333 !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #54a464 !important;
+}
+
+/* ------------------------------------
+   JUMBOTRON / HERO SECTION
+------------------------------------ */
+
+.jumbotron {
+  background: linear-gradient(135deg, #54a464, #6ed68a);
+  color: white;
+  padding: 5rem 2rem;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.display-4 {
+  font-weight: 700;
+}
+
+.lead {
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------
+   MODERN SEARCH BAR
+------------------------------------ */
+
+.search-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  max-width: 650px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.search-container:hover {
+  box-shadow: 0 10px 30px rgba(84, 164, 100, 0.25);
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  font-family: "Lato", sans-serif;
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+}
+
+.search-container button {
+  background: linear-gradient(135deg, #54a464, #3f8850);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-container button:hover {
+  background: linear-gradient(135deg, #469055, #367b45);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------
+   CARD STYLING
+------------------------------------ */
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ------------------------------------
+   FOOTER
+------------------------------------ */
+
+footer {
+  background-color: #f8f9fa;
+  color: #666;
+  padding: 1.5rem 0;
+}
+
+footer span {
+  font-size: 14px;
+}
+
+/* ------------------------------------
+   MEDIA QUERIES
+------------------------------------ */
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .search-container input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-container button {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------
+   MODERN SEARCH BAR WITH DROPDOWN
+------------------------------------ */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #54a464, #6ed68a);
+  padding: 0.8rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 750px;
+  margin: 2rem auto;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* DROPDOWN STYLING */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dropdown-list li {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+  font-family: "Lato", sans-serif;
+}
+
+.dropdown-list li:hover {
+  background-color: #54a464;
+  color: white;
+}
+
+/* ACTIVE DROPDOWN STATE */
+.dropdown.active .dropdown-list {
+  display: block;
+}
+
+/* INPUT FIELD */
+#searchInput {
+  flex: 1;
+  min-width: 250px;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  outline: none;
+  color: #333;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  box-shadow: 0 0 0 3px rgba(84, 164, 100, 0.25);
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  background: white;
+  color: #54a464;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #54a464;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+
+  #searchInput,
+  .dropdown-btn,
+  .search-btn {
+    width: 100%;
+  }
+
+  .dropdown-list {
+    width: 100%;
+  }
+}
+
+/* PROPERTY TYPE TOGGLE BUTTONS */
+.property-type-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.property-type-btn {
+  background-color: white;
+  border: 2px solid #54a464;
+  color: #54a464;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.property-type-btn:hover {
+  background-color: #54a464;
+  color: white;
+  transform: scale(1.05);
+}
+
+.property-type-btn.active {
+  background-color: #54a464;
+  color: white;
+  box-shadow: 0 0 10px rgba(84, 164, 100, 0.4);
+}
+
+@media (max-width: 768px) {
+  .property-type-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .property-type-btn {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+}
+
+
+/* ------------------------------------
+   Features Carousel
+------------------------------------ */
+/* Full-width container overriding any parent constraints */
+.dual-section-full {
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Remove any container centering */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+/* Each side takes 50% */
+.dual-half {
+  flex: 1;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left side – primary gradient */
+.left-half {
+  background: linear-gradient(135deg, #43a047, #6fdc8c);
+  color: white;
+}
+
+/* Right side – clean white */
+.right-half {
+  background: #ffffff;
+  color: #333;
+}
+
+/* Headings and text */
+.dual-half h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dual-half p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+/* Buttons */
+.dual-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dual-btn:hover {
+  background: #54a464; /* Nestori green */
+  color: #fff;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .dual-section-full {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dual-half {
+    width: 100%;
+    padding: 60px 20px;
+  }
+}
+
+
+/* ------------------------------------
+   AUTH MODAL STYLES(LOGIN/SIGNUP)
+------------------------------------ */
+.auth-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.auth-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+}
+
+.auth-content h2 {
+  color: #54a464;
+  font-family: 'Monoton', cursive;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.auth-content .form-group {
+  margin-bottom: 1rem;
+}
+
+.auth-content input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-content input:focus {
+  border-color: #54a464;
+  box-shadow: 0 0 0 2px rgba(84, 164, 100, 0.2);
+}
+
+.btn-submit {
+  background: linear-gradient(90deg, #54a464, #4da26a);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(90deg, #4da26a, #3d8c58);
+}
+
+.switch-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch-text a {
+  color: #54a464;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.4rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #54a464;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
