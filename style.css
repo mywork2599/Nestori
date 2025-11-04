@@ -16,6 +16,14 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, button, input {
   font-style: normal;
 }
 
+.cmplogo1 {
+  font-family: "Monoton", sans-serif;
+  color: #ffffff !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 /* ------------------------------------
    GENERAL STYLES
 ------------------------------------ */
