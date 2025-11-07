@@ -11,6 +11,7 @@
 
     <!--Link css file to the main file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sourstyle.css">
 
 
     <!--Favicon or Icon which represent the website-->
@@ -34,70 +35,124 @@
 <body>
     <!-- Header section containing the navigation bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <!-- Brand/logo -->
-                <a class="navbar-brand" href="#">Nestori</a>
-                <!-- Toggler/collapsible Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Navbar links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Home link -->
-                        <li class="nav-item ">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <!-- Find Rentals link -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="FindRental.html">Find Rentals</a>
-                        </li>
-                          <!-- Roommate Matching link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="RoomateMatching.html">Rommate Matching</a>
-                        </li>
-                          <!-- LandLord Portal link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="LandlordPortal.html">LandLord Portal</a>
-                        </li>
-                          <!-- Tenant Dashboard link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="TenantDashbord.html">Tenant Dashboard</a>
-                        </li>
-                         <!-- Sources link -->
-                         <li class="nav-item active">
-                            <a class="nav-link" href="Sources.html">Sources</a>
-                        </li>
-                        <!-- About Us link -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="Aboutus.html">About Us</a>
-                        </li>
-                        <!-- Contact link -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="Contactus.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
     </header>
 
-    <div class="container">
-        <h1>Resources</h1>
-        <p>This page provides users with access to helpful resources and guides on various rental-related topics.</p>
-        <p>Resources may include articles, blog posts, videos, and infographics covering renting tips, legal guidance, moving checklists, and more.</p>
-        <p>Users can find answers to common questions and gain valuable insights to navigate the rental process effectively.</p>
-        
-        <h2>Helpful Links:</h2>
-        <ul>
-            <li><a href="#">10 Tips for First-Time Renters</a></li>
-            <li><a href="#">Understanding Rental Agreements</a></li>
-            <li><a href="#">Moving Checklist: What You Need to Know</a></li>
-            <li><a href="#">Legal Rights and Responsibilities of Tenants</a></li>
-            <li><a href="#">How to Budget for Renting an Apartment</a></li>
-        </ul>
-    </div>
+    <section class="community-hero">
+      <h2>NestShare Community</h2>
+        <p>Discover real home experiences, tours, décor inspiration & rental advice.</p>
+    </section>
+
+<div class="filters">
+  <button class="active">All</button>
+  <button>Flat Tours</button>
+  <button>PG Tours</button>
+  <button>Decor Ideas</button>
+  <button>Rental Tips</button>
+  <button>Landlord Guides</button>
+</div>
+
+<div class="content-grid">
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>2BHK Tour in Bangalore</h4>
+    <p>Shared by: <strong>Aman Raj</strong></p>
+  </div>
+
+  <div class="content-card">
+    <img src="decor.jpg" alt="">
+    <h4>Minimal Room Decor Setup</h4>
+    <p>Shared by: <strong>Sneha Kapoor</strong></p>
+  </div>
+
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>Affordable PG Tour in Delhi</h4>
+    <p>Shared by: <strong>Rohit Verma</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <img src="rental_tips.jpg" alt="">
+    <h4>5 Tips to Negotiate Rent</h4>
+    <p>Shared by: <strong>Priya Singh</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>3BHK Apartment Tour in Mumbai</h4>
+    <p>Shared by: <strong>Vikram Patel</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <img src="landlord_guide.jpg" alt="">
+    <h4>Guide for First-Time Landlords</h4>
+    <p>Shared by: <strong>Anita Desai</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>Cozy Studio Tour in Chennai</h4>
+    <p>Shared by: <strong>Arjun Mehta</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <img src="decor2.jpg" alt="">
+    <h4>Bohemian Room Decor Ideas</h4>
+    <p>Shared by: <strong>Neha Sharma</strong></p>
+  </div>  
+
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>1BHK Tour in Pune</h4>
+    <p>Shared by: <strong>Rakesh Gupta</strong></p>
+  </div>
+  
+  <div class="content-card">
+    <video src="sample.mp4" controls></video>
+    <h4>Luxury PG Tour in Hyderabad</h4>
+    <p>Shared by: <strong>Sameer Khan</strong></p>
+  </div>  
+
+
+</div>
+
+  <button class="upload-btn">+</button>
 
 
       <!-- Footer section with copyright information -->
