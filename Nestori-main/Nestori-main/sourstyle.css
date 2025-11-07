@@ -1,0 +1,58 @@
+.community-hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.filters {
+  text-align: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filters button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: #e8e8e8;
+  cursor: pointer;
+}
+
+.filters .active {
+  background: #40a65c;
+  color: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding-bottom: 10px;
+}
+
+.content-card video, .content-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.upload-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #40a65c;
+  color: white;
+  font-size: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}

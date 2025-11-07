@@ -34,53 +34,43 @@
 <body>
     <!-- Header section containing the navigation bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <!-- Brand/logo -->
-                <a class="navbar-brand" href="#">Nestori</a>
-                <!-- Toggler/collapsible Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Navbar links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Home link -->
-                        <li class="nav-item ">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <!-- Find Rentals link -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="FindRental.html">Find Rentals</a>
-                        </li>
-                          <!-- Roommate Matching link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="RoomateMatching.html">Rommate Matching</a>
-                        </li>
-                          <!-- LandLord Portal link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="LandlordPortal.html">LandLord Portal</a>
-                        </li>
-                          <!-- Tenant Dashboard link -->
-                          <li class="nav-item">
-                            <a class="nav-link" href="TenantDashbord.html">Tenant Dashboard</a>
-                        </li>
-                         <!-- Sources link -->
-                         <li class="nav-item">
-                            <a class="nav-link" href="Sources.html">Sources</a>
-                        </li>
-                        <!-- About Us link -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="Aboutus.html">About Us</a>
-                        </li>
-                        <!-- Contact link -->
-                        <li class="nav-item">
-                            <a class="nav-link active" href="Contactus.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
     </header>
 
 
