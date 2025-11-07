@@ -49,7 +49,53 @@ const sampleProfiles = [
     type: "PG",
     tags: ["clean","non-smoker"],
     img: "https://source.unsplash.com/300x300/?boy,portrait"
+  },
+  {
+    id: 5,
+    name: "Neha",
+    age: 30,
+    gender: "female",
+    city: "Mumbai",
+    price: 15000,
+    type: "Flat",
+    tags: ["pets","night-owl"],
+    img: "https://source.unsplash.com/300x300/?woman,smile"
+  },
+  {
+    id: 6,
+    name: "Aman",
+    age: 28,
+    gender: "male",
+    city: "Bengaluru",
+    price: 11000,
+    type: "Flat",
+    tags: ["clean","non-smoker","pets"],
+    img: "https://source.unsplash.com/300x300 /?man,smile"
+  },
+  { 
+    id: 7,
+    name: "Kavya",
+    age: 25,        
+    gender: "female",
+    city: "Chennai",
+    price: 6000,
+    type: "PG",
+    tags: ["clean","non-smoker"],
+    img: "https://source.unsplash .com/300x300/?girl,smile"
+  },
+  { 
+    id: 8,
+    name: "Vikram",
+    age: 31,            
+    gender: "male",      
+    city: "Mumbai",
+    price: 14000,
+    type: "Flat",
+    tags: ["pets","night-owl"],
+    img: "https://source.unsplash.com/300x300/? boy,smile"
   }
+        
+
 ];
 
 // helpers
