@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestori</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="frstyle.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
+    <link rel="manifest" href="favicon_Nestori/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- ===== Login / Signup Modal ===== -->
+    <div id="authModal" class="auth-modal">
+      <div class="auth-content">
+        <span class="close-btn">&times;</span>
+          <h2 id="modalTitle">Login to Nestori</h2>
+
+          <form id="authForm">
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Login</button>
+
+            <p class="switch-text">
+                Don’t have an account?
+                <a href="#" id="switchToSignup">Sign Up</a>
+            </p>
+          </form>
+      </div>
+    </div>
+
+        <script>
+          const authModal = document.getElementById('authModal');
+          const loginBtn = document.getElementById('loginBtn');
+          const signupBtn = document.getElementById('signupBtn');
+          const closeBtn = document.querySelector('.close-btn');
+          const switchToSignup = document.getElementById('switchToSignup');
+          const modalTitle = document.getElementById('modalTitle');
+          const btnSubmit = document.querySelector('.btn-submit');
+
+        // Open modal for Login
+          loginBtn.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+            modalTitle.textContent = 'Login to Nestori';
+            btnSubmit.textContent = 'Login';
+            switchToSignup.innerHTML = 'Sign Up';
+          });
+
+        // Open modal for Signup
+          signupBtn.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+            modalTitle.textContent = 'Create Your Account';
+            btnSubmit.textContent = 'Sign Up';
+            switchToSignup.innerHTML = 'Login';
+          });
+
+        // Switch between login/signup inside modal
+          switchToSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+              if (modalTitle.textContent.includes('Login')) {
+                  modalTitle.textContent = 'Create Your Account';
+                  btnSubmit.textContent = 'Sign Up';
+                  switchToSignup.innerHTML = 'Login';
+                 } else {
+                  modalTitle.textContent = 'Login to Nestori';
+                  btnSubmit.textContent = 'Login';
+                  switchToSignup.innerHTML = 'Sign Up';
+                }
+            });
+
+        // Close modal
+          closeBtn.addEventListener('click', () => {
+              authModal.style.display = 'none';
+          });
+
+          window.addEventListener('click', (e) => {
+            if (e.target === authModal) authModal.style.display = 'none';
+          });
+        </script>
+
+  <!-- ===== End of Modal ===== -->
+
+
+
+
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <!-- Large welcome message -->
+            <h1 class="display-4">Find Your Rentals</h1>
+            <!-- Subtitle or description -->
+            <p class="lead">Find Your Nest,Write Your Story.</p>
+        </div>
+        </div>    
+
+        <!-- Combined Rental Search and Filters -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Search Rentals</h5>
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <input type="text" class="form-control" placeholder="Enter City or Area">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <input type="number" class="form-control" placeholder="Min Rent ₹">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <input type="number" class="form-control" placeholder="Max Rent ₹">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary btn-block">Search</button>
+                        </div>
+                    </div>
+
+                    <!-- Property Type Filter -->
+                    <div class="form-group mt-3">
+                        <label>Property Type</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="1BHK">
+                            <label class="form-check-label">1 BHK</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="2BHK">
+                            <label class="form-check-label">2 BHK</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="3BHK">
+                            <label class="form-check-label">3 BHK</label>
+                        </div>
+                    </div>
+
+                    <!-- Furnishing Filter -->
+                    <div class="form-group">
+                        <label>Furnishing</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="Furnished">
+                            <label class="form-check-label">Furnished</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="Unfurnished">
+                            <label class="form-check-label">Unfurnished</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Rental Listings -->
+       
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title mb-4">Rental Listings</h5>
+
+    <!-- Rental Results Container -->
+            <div class="results-container" id="results-container">
+            <!-- Cards will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+
+
+        <!-- Account Settings -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Account Settings</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#">Update Profile</a></li>
+                    <li class="list-group-item"><a href="#">Change Password</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Support and Help Resources -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Support and Help Resources</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#">FAQs</a></li>
+                    <li class="list-group-item"><a href="#">Chat with Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light border-top">
+        <div class="container text-center">
+            <span class="text-muted">Copyright &copy; 2024 Nestori. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Add this script at the end of the body -->
+    <script src="rentalResults.js"></script>
+
+</body>
+</html>

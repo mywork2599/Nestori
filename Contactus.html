@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>Nestori</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Link css file to the main file -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!--Favicon or Icon which represent the website-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
+    <link rel="manifest" href="favicon_Nestori/site.webmanifest">
+
+    <!--Text Used for the website-->
+
+    <!--Primary Text is Lato & Secondary Text is Monoton-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header section containing the navigation bar -->
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+
+    <!-- Page content -->
+    <div class="container mt-5">
+        <h1>Contact Us</h1>
+        <p>This link should provide users with multiple contact options to reach out to Nestori with inquiries, feedback, or support requests.</p>
+        <p>Contact options may include email addresses, phone numbers, and a contact form.</p>
+        <p>Users can expect prompt responses and assistance from the Nestori team to address their needs and concerns effectively.</p>
+
+        <!-- Contact options -->
+        <h2>Contact Options</h2>
+        <ul>
+            <li>Email: <a href="mailto:info@nestori.com">info@nestori.com</a></li>
+            <li>Phone: +1234567890</li>
+            <!-- Add additional contact options if needed -->
+        </ul>
+
+        <!-- Contact form -->
+        <h2>Contact Form</h2>
+        <form action="submit.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+      <!-- Footer section with copyright information -->
+      <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <!-- Copyright notice -->
+            <span class="text-muted">Copyright &copy; 2024 Nestori. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

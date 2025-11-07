@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nestori — Roommate Matching</title>
+
+  <!-- Bootstrap (keeps your existing layout consistent) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Roommate matching styles -->
+  <link rel="stylesheet" href="rmstyle.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAV (keeps same structure as your site) -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">Nestori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+            <li class="nav-item active"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
+            </li>
+
+            <li class="nav-item">
+              <button class="btn btn-success" id="signupBtn">Sign Up</button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="rm-hero">
+    <div class="container">
+      <div class="hero-inner d-flex flex-column flex-md-row align-items-center">
+        <div class="hero-text mr-md-4">
+          <h1 class="display-4">Find the perfect roommate — faster</h1>
+          <p class="lead">Smart matching based on lifestyle, schedule, budget and preferences. Safe, verified, and private.</p>
+        </div>
+
+        <div class="hero-actions ml-md-auto">
+          <button class="btn btn-outline-light mr-2" id="quickFilterBtn">Quick Filters</button>
+          <button class="btn btn-light" id="createProfileBtn">Create Profile</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN: left = preference form, right = results -->
+  <main class="container rm-main">
+    <div class="row">
+      <!-- Preferences Panel -->
+      <aside class="col-lg-4 mb-4">
+        <div class="card prefs-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Your Preferences</h5>
+
+            <form id="prefsForm">
+              <div class="form-group">
+                <label for="cityInput">City / Area</label>
+                <input id="cityInput" class="form-control" placeholder="e.g., Koramangala" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label>Min Budget</label>
+                  <input id="minBudget" type="number" class="form-control" placeholder="₹" />
+                </div>
+                <div class="form-group col-6">
+                  <label>Max Budget</label>
+                  <input id="maxBudget" type="number" class="form-control" placeholder="₹" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Preferred Property Type</label>
+                <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary m-1 small active">
+                    <input type="checkbox" value="PG" checked> PG
+                  </label>
+                  <label class="btn btn-outline-secondary m-1 small">
+                    <input type="checkbox" value="Flat"> Flat
+                  </label>
+                  <label class="btn btn-outline-secondary m-1 small">
+                    <input type="checkbox" value="House"> House
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Lifestyle</label>
+                <div class="tags">
+                  <button type="button" class="tag" data-key="smoking">Non-Smoker</button>
+                  <button type="button" class="tag" data-key="pets">Pets OK</button>
+                  <button type="button" class="tag" data-key="lateNight">Night Owl</button>
+                  <button type="button" class="tag" data-key="clean">Very Clean</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Gender Preference</label>
+                <select id="genderPref" class="form-control">
+                  <option value="any">Any</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Move-in Date</label>
+                <input id="moveIn" type="date" class="form-control" />
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block">Find Matches</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mt-3 shadow-sm">
+          <div class="card-body small text-muted">
+            <strong>Tip:</strong> Add accurate preferences for better matches. Use <em>Tags</em> to highlight lifestyle habits.
+          </div>
+        </div>
+      </aside>
+
+      <!-- Results Panel -->
+      <section class="col-lg-8">
+        <div class="results-header d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Matches <small class="text-muted" id="matchCount">0 results</small></h5>
+          <div>
+            <label class="mr-2 small text-muted">Sort</label>
+            <select id="sortSelect" class="custom-select custom-select-sm">
+              <option value="score">Best Match</option>
+              <option value="priceLow">Price: Low to High</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="resultsList" class="results-list">
+          <!-- JS will inject result cards here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state text-center mt-5" style="display:none;">
+          <img src="https://source.unsplash.com/400x240/?room,home" alt="no matches" class="mb-3 rounded" style="max-width:320px;">
+          <h6>No matches found yet</h6>
+          <p class="text-muted">Try broadening your budget or location.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-5 py-4 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">© 2024 Nestori. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Roommate matching behavior -->
+  <script src="rm-script.js"></script>
+</body>
+</html>
