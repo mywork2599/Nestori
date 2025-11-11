@@ -105,3 +105,28 @@ body {
   display: inline-block;
   margin-top: 10px;
 }
+
+/* Layout wrapper */
+.rental-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Left section sticky */
+.filters-section {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .rental-layout {
+    grid-template-columns: 1fr;
+  }
+  .filters-section {
+    position: static;
+  }
+}
