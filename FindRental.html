@@ -58,80 +58,11 @@
     </nav>
   </header>
 
-    <!-- ===== Login / Signup Modal ===== -->
-    <div id="authModal" class="auth-modal">
-      <div class="auth-content">
-        <span class="close-btn">&times;</span>
-          <h2 id="modalTitle">Login to Nestori</h2>
+    <!-- ===== Login / Signup Modal (shared component) ===== -->
+    <!-- The modal HTML and JS are injected by `js/load-components.js`. -->
+    <script src="js/load-components.js"></script>
 
-          <form id="authForm">
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="password" placeholder="Password" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Login</button>
-
-            <p class="switch-text">
-                Don’t have an account?
-                <a href="#" id="switchToSignup">Sign Up</a>
-            </p>
-          </form>
-      </div>
-    </div>
-
-        <script>
-          const authModal = document.getElementById('authModal');
-          const loginBtn = document.getElementById('loginBtn');
-          const signupBtn = document.getElementById('signupBtn');
-          const closeBtn = document.querySelector('.close-btn');
-          const switchToSignup = document.getElementById('switchToSignup');
-          const modalTitle = document.getElementById('modalTitle');
-          const btnSubmit = document.querySelector('.btn-submit');
-
-        // Open modal for Login
-          loginBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Login to Nestori';
-            btnSubmit.textContent = 'Login';
-            switchToSignup.innerHTML = 'Sign Up';
-          });
-
-        // Open modal for Signup
-          signupBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Create Your Account';
-            btnSubmit.textContent = 'Sign Up';
-            switchToSignup.innerHTML = 'Login';
-          });
-
-        // Switch between login/signup inside modal
-          switchToSignup.addEventListener('click', (e) => {
-            e.preventDefault();
-              if (modalTitle.textContent.includes('Login')) {
-                  modalTitle.textContent = 'Create Your Account';
-                  btnSubmit.textContent = 'Sign Up';
-                  switchToSignup.innerHTML = 'Login';
-                 } else {
-                  modalTitle.textContent = 'Login to Nestori';
-                  btnSubmit.textContent = 'Login';
-                  switchToSignup.innerHTML = 'Sign Up';
-                }
-            });
-
-        // Close modal
-          closeBtn.addEventListener('click', () => {
-              authModal.style.display = 'none';
-          });
-
-          window.addEventListener('click', (e) => {
-            if (e.target === authModal) authModal.style.display = 'none';
-          });
-        </script>
-
-  <!-- ===== End of Modal ===== -->
+  <!-- ===== End of Modal (component) ===== -->
 
 
 
@@ -161,7 +92,7 @@
                             <input type="number" class="form-control" placeholder="Max Rent ₹">
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-primary btn-block">Search</button>
+                            <button type="submit" class="btn btn-primary btn-block">Search</button>
                         </div>
                     </div>
 
@@ -169,16 +100,16 @@
                     <div class="form-group mt-3">
                         <label>Property Type</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="1BHK">
-                            <label class="form-check-label">1 BHK</label>
+                            <input class="form-check-input" type="checkbox" id="chk1BHK" value="1BHK">
+                            <label class="form-check-label" for="chk1BHK">1 BHK</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="2BHK">
-                            <label class="form-check-label">2 BHK</label>
+                            <input class="form-check-input" type="checkbox" id="chk2BHK" value="2BHK">
+                            <label class="form-check-label" for="chk2BHK">2 BHK</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="3BHK">
-                            <label class="form-check-label">3 BHK</label>
+                            <input class="form-check-input" type="checkbox" id="chk3BHK" value="3BHK">
+                            <label class="form-check-label" for="chk3BHK">3 BHK</label>
                         </div>
                     </div>
 
@@ -186,12 +117,12 @@
                     <div class="form-group">
                         <label>Furnishing</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="Furnished">
-                            <label class="form-check-label">Furnished</label>
+                            <input class="form-check-input" type="checkbox" id="chkFurnished" value="Furnished">
+                            <label class="form-check-label" for="chkFurnished">Furnished</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="Unfurnished">
-                            <label class="form-check-label">Unfurnished</label>
+                            <input class="form-check-input" type="checkbox" id="chkUnfurnished" value="Unfurnished">
+                            <label class="form-check-label" for="chkUnfurnished">Unfurnished</label>
                         </div>
                     </div>
                 </form>

@@ -8,6 +8,12 @@
   <!-- Bootstrap (keeps your existing layout consistent) -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+   <!--Favicon or Icon which represent the website-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
+    <link rel="manifest" href="favicon_Nestori/site.webmanifest">
+
   <!-- Main site styles -->
   <link rel="stylesheet" href="style.css">
   <!-- Roommate matching styles -->
@@ -34,29 +40,35 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto align-items-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
-            <li class="nav-item active"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
-            <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
-            <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
-            <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
-            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+    <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+    <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+    <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">Nestin</a></li>
+    <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+    <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+    <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+  </ul>
 
-            <li class="nav-item">
-              <button class="btn btn-outline-success mx-2" id="loginBtn">Login</button>
-            </li>
-
-            <li class="nav-item">
-              <button class="btn btn-success" id="signupBtn">Sign Up</button>
-            </li>
+  <!-- LOGIN / SIGNUP HERE -->
+  <div class="navbar-buttons mt-2 mt-lg-0">
+    <a id="loginBtn" class="btn login-btn" href="#">Login</a>
+    <a id="signupBtn" class="btn signup-btn ml-2" href="#">Sign Up</a>
+  </div>
+        </div>
 
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
+  <!-- ===== Login / Signup Modal (shared component) ===== -->
+  <!-- The modal HTML and behavior are injected by `js/load-components.js`. -->
+  <script src="js/load-components.js"></script>
+
+  <!-- ===== End of Modal (component) ===== -->
 
   <!-- HERO -->
   <section class="rm-hero">
@@ -67,10 +79,11 @@
           <p class="lead">Smart matching based on lifestyle, schedule, budget and preferences. Safe, verified, and private.</p>
         </div>
 
-        <div class="hero-actions ml-md-auto">
-          <button class="btn btn-outline-light mr-2" id="quickFilterBtn">Quick Filters</button>
-          <button class="btn btn-light" id="createProfileBtn">Create Profile</button>
-        </div>
+       <div class="hero-buttons">
+  <a href="#" class="btn btn-light">Quick Filters</a>
+  <a href="#" class="btn btn-outline-light">Create Profile</a>
+      </div>
+
       </div>
     </div>
   </section>
@@ -127,8 +140,8 @@
               </div>
 
               <div class="form-group">
-                <label>Gender Preference</label>
-                <select id="genderPref" class="form-control">
+                <label for="genderPref">Gender Preference</label>
+                <select id="genderPref" class="form-control" title="Gender preference" aria-label="Gender preference">
                   <option value="any">Any</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -136,7 +149,7 @@
               </div>
 
               <div class="form-group">
-                <label>Move-in Date</label>
+                <label for="moveIn">Move-in Date</label>
                 <input id="moveIn" type="date" class="form-control" />
               </div>
 
@@ -154,11 +167,11 @@
 
       <!-- Results Panel -->
       <section class="col-lg-8">
-        <div class="results-header d-flex justify-content-between align-items-center mb-3">
+            <div class="results-header d-flex justify-content-between align-items-center mb-3">
           <h5 class="mb-0">Matches <small class="text-muted" id="matchCount">0 results</small></h5>
           <div>
             <label class="mr-2 small text-muted">Sort</label>
-            <select id="sortSelect" class="custom-select custom-select-sm">
+            <select id="sortSelect" class="custom-select custom-select-sm" title="Sort results" aria-label="Sort results">
               <option value="score">Best Match</option>
               <option value="priceLow">Price: Low to High</option>
             </select>
@@ -170,8 +183,8 @@
         </div>
 
         <!-- Empty State -->
-        <div id="emptyState" class="empty-state text-center mt-5" style="display:none;">
-          <img src="https://source.unsplash.com/400x240/?room,home" alt="no matches" class="mb-3 rounded" style="max-width:320px;">
+        <div id="emptyState" class="empty-state text-center mt-5">
+          <img src="https://source.unsplash.com/400x240/?room,home" alt="no matches" class="mb-3 rounded">
           <h6>No matches found yet</h6>
           <p class="text-muted">Try broadening your budget or location.</p>
         </div>
@@ -182,7 +195,7 @@
   <!-- Footer -->
   <footer class="footer mt-5 py-4 bg-light">
     <div class="container text-center">
-      <span class="text-muted">© 2024 Nestori. All rights reserved.</span>
+      <span class="text-muted">2025 Nestori &TRADE;. All rights reserved.</span>
     </div>
   </footer>
 

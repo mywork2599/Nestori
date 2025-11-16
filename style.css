@@ -574,3 +574,8 @@ footer span {
   to { opacity: 1; }
 }
 
+/* Accessibility helpers */
+.empty-state { display: none; }
+.empty-state img { max-width: 320px; height: auto; }
+
+

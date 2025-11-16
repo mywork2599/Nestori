@@ -75,6 +75,28 @@ h2 {
   color: #54a464 !important;
 }
 
+/* Desktop Navbar Buttons */
+.navbar-buttons .btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 15px;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .navbar-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-buttons .signup-btn {
+    margin-left: 0 !important;
+  }
+}
+
+
 /* ------------------------------------
    JUMBOTRON / HERO SECTION
 ------------------------------------ */
@@ -573,4 +595,9 @@ footer span {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* Accessibility helpers */
+.empty-state { display: none; }
+.empty-state img { max-width: 320px; height: auto; }
+
 
