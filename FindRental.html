@@ -59,80 +59,11 @@
     </nav>
   </header>
 
-    <!-- ===== Login / Signup Modal ===== -->
-    <div id="authModal" class="auth-modal">
-      <div class="auth-content">
-        <span class="close-btn">&times;</span>
-          <h2 id="modalTitle">Login to Nestori</h2>
+    <!-- ===== Login / Signup Modal (shared component) ===== -->
+    <!-- The modal HTML and behavior are injected by `js/load-components.js`. -->
+    <script src="js/load-components.js"></script>
 
-          <form id="authForm">
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="password" placeholder="Password" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Login</button>
-
-            <p class="switch-text">
-                Don’t have an account?
-                <a href="#" id="switchToSignup">Sign Up</a>
-            </p>
-          </form>
-      </div>
-    </div>
-
-        <script>
-          const authModal = document.getElementById('authModal');
-          const loginBtn = document.getElementById('loginBtn');
-          const signupBtn = document.getElementById('signupBtn');
-          const closeBtn = document.querySelector('.close-btn');
-          const switchToSignup = document.getElementById('switchToSignup');
-          const modalTitle = document.getElementById('modalTitle');
-          const btnSubmit = document.querySelector('.btn-submit');
-
-        // Open modal for Login
-          loginBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Login to Nestori';
-            btnSubmit.textContent = 'Login';
-            switchToSignup.innerHTML = 'Sign Up';
-          });
-
-        // Open modal for Signup
-          signupBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Create Your Account';
-            btnSubmit.textContent = 'Sign Up';
-            switchToSignup.innerHTML = 'Login';
-          });
-
-        // Switch between login/signup inside modal
-          switchToSignup.addEventListener('click', (e) => {
-            e.preventDefault();
-              if (modalTitle.textContent.includes('Login')) {
-                  modalTitle.textContent = 'Create Your Account';
-                  btnSubmit.textContent = 'Sign Up';
-                  switchToSignup.innerHTML = 'Login';
-                 } else {
-                  modalTitle.textContent = 'Login to Nestori';
-                  btnSubmit.textContent = 'Login';
-                  switchToSignup.innerHTML = 'Sign Up';
-                }
-            });
-
-        // Close modal
-          closeBtn.addEventListener('click', () => {
-              authModal.style.display = 'none';
-          });
-
-          window.addEventListener('click', (e) => {
-            if (e.target === authModal) authModal.style.display = 'none';
-          });
-        </script>
-
-  <!-- ===== End of Modal ===== -->
+  <!-- ===== End of Modal (component) ===== -->
 
 
 
@@ -170,18 +101,33 @@
 
                     <label class="mt-2">Property Type</label>
                     <div class="form-group">
-                        <label><input type="checkbox"> 1 BHK</label><br>
-                        <label><input type="checkbox"> 2 BHK</label><br>
-                        <label><input type="checkbox"> 3 BHK</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chk1BHK_main" value="1BHK">
+                            <label class="form-check-label" for="chk1BHK_main">1 BHK</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chk2BHK_main" value="2BHK">
+                            <label class="form-check-label" for="chk2BHK_main">2 BHK</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chk3BHK_main" value="3BHK">
+                            <label class="form-check-label" for="chk3BHK_main">3 BHK</label>
+                        </div>
                     </div>
 
                     <label>Furnishing</label>
                     <div class="form-group">
-                        <label><input type="checkbox"> Furnished</label><br>
-                        <label><input type="checkbox"> Unfurnished</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkFurnished_main" value="Furnished">
+                            <label class="form-check-label" for="chkFurnished_main">Furnished</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkUnfurnished_main" value="Unfurnished">
+                            <label class="form-check-label" for="chkUnfurnished_main">Unfurnished</label>
+                        </div>
                     </div>
 
-                    <button class="btn btn-success btn-block">Search</button>
+                    <button type="submit" class="btn btn-success btn-block">Search</button>
                 </form>
             </div>
         </div>

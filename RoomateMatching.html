@@ -64,80 +64,11 @@
     </nav>
   </header>
 
-  <!-- ===== Login / Signup Modal ===== -->
-    <div id="authModal" class="auth-modal">
-      <div class="auth-content">
-        <span class="close-btn">&times;</span>
-          <h2 id="modalTitle">Login to Nestori</h2>
+  <!-- ===== Login / Signup Modal (shared component) ===== -->
+  <!-- The modal HTML and behavior are injected by `js/load-components.js`. -->
+  <script src="js/load-components.js"></script>
 
-          <form id="authForm">
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="password" placeholder="Password" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Login</button>
-
-            <p class="switch-text">
-                Don’t have an account?
-                <a href="#" id="switchToSignup">Sign Up</a>
-            </p>
-          </form>
-      </div>
-    </div>
-
-        <script>
-          const authModal = document.getElementById('authModal');
-          const loginBtn = document.getElementById('loginBtn');
-          const signupBtn = document.getElementById('signupBtn');
-          const closeBtn = document.querySelector('.close-btn');
-          const switchToSignup = document.getElementById('switchToSignup');
-          const modalTitle = document.getElementById('modalTitle');
-          const btnSubmit = document.querySelector('.btn-submit');
-
-        // Open modal for Login
-          loginBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Login to Nestori';
-            btnSubmit.textContent = 'Login';
-            switchToSignup.innerHTML = 'Sign Up';
-          });
-
-        // Open modal for Signup
-          signupBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Create Your Account';
-            btnSubmit.textContent = 'Sign Up';
-            switchToSignup.innerHTML = 'Login';
-          });
-
-        // Switch between login/signup inside modal
-          switchToSignup.addEventListener('click', (e) => {
-            e.preventDefault();
-              if (modalTitle.textContent.includes('Login')) {
-                  modalTitle.textContent = 'Create Your Account';
-                  btnSubmit.textContent = 'Sign Up';
-                  switchToSignup.innerHTML = 'Login';
-                 } else {
-                  modalTitle.textContent = 'Login to Nestori';
-                  btnSubmit.textContent = 'Login';
-                  switchToSignup.innerHTML = 'Sign Up';
-                }
-            });
-
-        // Close modal
-          closeBtn.addEventListener('click', () => {
-              authModal.style.display = 'none';
-          });
-
-          window.addEventListener('click', (e) => {
-            if (e.target === authModal) authModal.style.display = 'none';
-          });
-        </script>
-
-  <!-- ===== End of Modal ===== -->
+  <!-- ===== End of Modal (component) ===== -->
 
   <!-- HERO -->
   <section class="rm-hero">
@@ -209,8 +140,8 @@
               </div>
 
               <div class="form-group">
-                <label>Gender Preference</label>
-                <select id="genderPref" class="form-control">
+                <label for="genderPref">Gender Preference</label>
+                <select id="genderPref" class="form-control" title="Gender preference" aria-label="Gender preference">
                   <option value="any">Any</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -218,7 +149,7 @@
               </div>
 
               <div class="form-group">
-                <label>Move-in Date</label>
+                <label for="moveIn">Move-in Date</label>
                 <input id="moveIn" type="date" class="form-control" />
               </div>
 
@@ -236,11 +167,11 @@
 
       <!-- Results Panel -->
       <section class="col-lg-8">
-        <div class="results-header d-flex justify-content-between align-items-center mb-3">
+            <div class="results-header d-flex justify-content-between align-items-center mb-3">
           <h5 class="mb-0">Matches <small class="text-muted" id="matchCount">0 results</small></h5>
           <div>
             <label class="mr-2 small text-muted">Sort</label>
-            <select id="sortSelect" class="custom-select custom-select-sm">
+            <select id="sortSelect" class="custom-select custom-select-sm" title="Sort results" aria-label="Sort results">
               <option value="score">Best Match</option>
               <option value="priceLow">Price: Low to High</option>
             </select>
@@ -252,8 +183,8 @@
         </div>
 
         <!-- Empty State -->
-        <div id="emptyState" class="empty-state text-center mt-5" style="display:none;">
-          <img src="https://source.unsplash.com/400x240/?room,home" alt="no matches" class="mb-3 rounded" style="max-width:320px;">
+        <div id="emptyState" class="empty-state text-center mt-5">
+          <img src="https://source.unsplash.com/400x240/?room,home" alt="no matches" class="mb-3 rounded">
           <h6>No matches found yet</h6>
           <p class="text-muted">Try broadening your budget or location.</p>
         </div>

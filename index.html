@@ -65,80 +65,14 @@
     </nav>
   </header>
 
-  <!-- ===== Login / Signup Modal ===== -->
-    <div id="authModal" class="auth-modal">
-      <div class="auth-content">
-        <span class="close-btn">&times;</span>
-          <h2 id="modalTitle">Login to Nestori</h2>
+  <!-- ===== Login / Signup Modal (loaded as reusable component) ===== -->
+  <!-- Component will be injected at the end of <body> by `js/load-components.js` -->
+  <!-- No inline modal markup here — keeps pages DRY. -->
 
-          <form id="authForm">
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="password" placeholder="Password" required>
-            </div>
+  <!-- Loader for shared components -->
+  <script src="js/load-components.js"></script>
 
-            <button type="submit" class="btn-submit">Login</button>
-
-            <p class="switch-text">
-                Don’t have an account?
-                <a href="#" id="switchToSignup">Sign Up</a>
-            </p>
-          </form>
-      </div>
-    </div>
-
-        <script>
-          const authModal = document.getElementById('authModal');
-          const loginBtn = document.getElementById('loginBtn');
-          const signupBtn = document.getElementById('signupBtn');
-          const closeBtn = document.querySelector('.close-btn');
-          const switchToSignup = document.getElementById('switchToSignup');
-          const modalTitle = document.getElementById('modalTitle');
-          const btnSubmit = document.querySelector('.btn-submit');
-
-        // Open modal for Login
-          loginBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Login to Nestori';
-            btnSubmit.textContent = 'Login';
-            switchToSignup.innerHTML = 'Sign Up';
-          });
-
-        // Open modal for Signup
-          signupBtn.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            modalTitle.textContent = 'Create Your Account';
-            btnSubmit.textContent = 'Sign Up';
-            switchToSignup.innerHTML = 'Login';
-          });
-
-        // Switch between login/signup inside modal
-          switchToSignup.addEventListener('click', (e) => {
-            e.preventDefault();
-              if (modalTitle.textContent.includes('Login')) {
-                  modalTitle.textContent = 'Create Your Account';
-                  btnSubmit.textContent = 'Sign Up';
-                  switchToSignup.innerHTML = 'Login';
-                 } else {
-                  modalTitle.textContent = 'Login to Nestori';
-                  btnSubmit.textContent = 'Login';
-                  switchToSignup.innerHTML = 'Sign Up';
-                }
-            });
-
-        // Close modal
-          closeBtn.addEventListener('click', () => {
-              authModal.style.display = 'none';
-          });
-
-          window.addEventListener('click', (e) => {
-            if (e.target === authModal) authModal.style.display = 'none';
-          });
-        </script>
-
-  <!-- ===== End of Modal ===== -->
+  <!-- ===== End of Modal (component) ===== -->
 
 
 
