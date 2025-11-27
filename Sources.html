@@ -27,9 +27,89 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href=\"https://fonts.googleapis.com\">
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap\" rel=\"stylesheet\">
+
+    <style>
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 3px;
+            background-color: rgba(0,0,0,0.5);
+            user-select: none;
+            z-index: 10;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active {
+            background-color: rgba(255,255,255,0.9);
+        }
+    </style>
 
 </head>
 <body>
@@ -94,62 +174,106 @@
 
 <div class="content-grid">
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>2BHK Tour in Bangalore</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" title="Spacious 2BHK Modern Apartment Tour in Bangalore" allowfullscreen></iframe>
+    <h4>Spacious 2BHK Modern Apartment Tour in Bangalore</h4>
     <p>Shared by: <strong>Aman Raj</strong></p>
   </div>
 
   <div class="content-card">
-    <img src="decor.jpg" alt="">
+    <div class="slideshow-container" data-slideshow-id="slide1">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop" alt="Minimal Room Decor Setup"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&h=250&fit=crop" alt="Modern Room Design"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop" alt="Interior Design"></div>
+      <a class="prev" onclick="changeSlide('slide1', -1)">&#10094;</a>
+      <a class="next" onclick="changeSlide('slide1', 1)">&#10095;</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide('slide1', 1)"></span>
+        <span class="dot" onclick="currentSlide('slide1', 2)"></span>
+        <span class="dot" onclick="currentSlide('slide1', 3)"></span>
+      </div>
+    </div>
     <h4>Minimal Room Decor Setup</h4>
     <p>Shared by: <strong>Sneha Kapoor</strong></p>
   </div>
 
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>Affordable PG Tour in Delhi</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/Z0b0I-P_8fE" frameborder="0" title="Budget-Friendly PG With All Amenities in Delhi" allowfullscreen></iframe>
+    <h4>Budget-Friendly PG With All Amenities in Delhi</h4>
     <p>Shared by: <strong>Rohit Verma</strong></p>
   </div>
   
   <div class="content-card">
-    <img src="rental_tips.jpg" alt="">
+    <div class="slideshow-container" data-slideshow-id="slide2">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=250&fit=crop" alt="5 Tips to Negotiate Rent"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Real Estate Tips"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&h=250&fit=crop" alt="Negotiation Guide"></div>
+      <a class="prev" onclick="changeSlide('slide2', -1)">&#10094;</a>
+      <a class="next" onclick="changeSlide('slide2', 1)">&#10095;</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide('slide2', 1)"></span>
+        <span class="dot" onclick="currentSlide('slide2', 2)"></span>
+        <span class="dot" onclick="currentSlide('slide2', 3)"></span>
+      </div>
+    </div>
     <h4>5 Tips to Negotiate Rent</h4>
     <p>Shared by: <strong>Priya Singh</strong></p>
   </div>
   
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>3BHK Apartment Tour in Mumbai</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/cK3NMZbT9qo" frameborder="0" title="Luxury 3BHK Apartment With Premium Furnishings in Mumbai" allowfullscreen></iframe>
+    <h4>Luxury 3BHK Apartment With Premium Furnishings in Mumbai</h4>
     <p>Shared by: <strong>Vikram Patel</strong></p>
   </div>
   
   <div class="content-card">
-    <img src="landlord_guide.jpg" alt="">
+    <div class="slideshow-container" data-slideshow-id="slide3">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Guide for First-Time Landlords"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=250&fit=crop" alt="Landlord Guide"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?w=400&h=250&fit=crop" alt="Property Management"></div>
+      <a class="prev" onclick="changeSlide('slide3', -1)">&#10094;</a>
+      <a class="next" onclick="changeSlide('slide3', 1)">&#10095;</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide('slide3', 1)"></span>
+        <span class="dot" onclick="currentSlide('slide3', 2)"></span>
+        <span class="dot" onclick="currentSlide('slide3', 3)"></span>
+      </div>
+    </div>
     <h4>Guide for First-Time Landlords</h4>
     <p>Shared by: <strong>Anita Desai</strong></p>
   </div>
   
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>Cozy Studio Tour in Chennai</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/uNnl-MRWYcA" frameborder="0" title="Cozy Studio Apartment Perfect for Students in Chennai" allowfullscreen></iframe>
+    <h4>Cozy Studio Apartment Perfect for Students in Chennai</h4>
     <p>Shared by: <strong>Arjun Mehta</strong></p>
   </div>
   
   <div class="content-card">
-    <img src="decor2.jpg" alt="">
+    <div class="slideshow-container" data-slideshow-id="slide4">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=250&fit=crop" alt="Bohemian Room Decor Ideas"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&h=250&fit=crop" alt="Boho Decor Style"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop" alt="Bohemian Interior"></div>
+      <a class="prev" onclick="changeSlide('slide4', -1)">&#10094;</a>
+      <a class="next" onclick="changeSlide('slide4', 1)">&#10095;</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide('slide4', 1)"></span>
+        <span class="dot" onclick="currentSlide('slide4', 2)"></span>
+        <span class="dot" onclick="currentSlide('slide4', 3)"></span>
+      </div>
+    </div>
     <h4>Bohemian Room Decor Ideas</h4>
     <p>Shared by: <strong>Neha Sharma</strong></p>
   </div>  
 
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>1BHK Tour in Pune</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/cPCLFtznQrM" frameborder="0" title="Compact 1BHK With Excellent Connectivity in Pune" allowfullscreen></iframe>
+    <h4>Compact 1BHK With Excellent Connectivity in Pune</h4>
     <p>Shared by: <strong>Rakesh Gupta</strong></p>
   </div>
   
   <div class="content-card">
-    <video src="sample.mp4" controls></video>
-    <h4>Luxury PG Tour in Hyderabad</h4>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" title="Premium PG With Furnished Rooms & Shared Amenities in Hyderabad" allowfullscreen></iframe>
+    <h4>Premium PG With Furnished Rooms & Shared Amenities in Hyderabad</h4>
     <p>Shared by: <strong>Sameer Khan</strong></p>
   </div>  
 
@@ -168,8 +292,96 @@
     </footer>
 
     <!-- Bootstrap and jQuery scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js\"></script>
+    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>
+
+    <script>
+        let slideshows = {};
+
+        function createSlideshow(container) {
+            const id = container.dataset.slideshowId;
+            if (!id) return;
+
+            const slides = container.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+
+            slideshows[id] = {
+                current: 0,
+                total: slides.length,
+                container: container,
+                auto: null
+            };
+
+            // Show first slide
+            showSlide(id, 0);
+
+            // Auto advance slides every 5 seconds
+            slideshows[id].auto = setInterval(() => {
+                slideshows[id].current = (slideshows[id].current + 1) % slideshows[id].total;
+                showSlide(id, slideshows[id].current);
+            }, 5000);
+
+            // Pause on hover
+            container.addEventListener('mouseenter', () => {
+                clearInterval(slideshows[id].auto);
+            });
+
+            container.addEventListener('mouseleave', () => {
+                slideshows[id].auto = setInterval(() => {
+                    slideshows[id].current = (slideshows[id].current + 1) % slideshows[id].total;
+                    showSlide(id, slideshows[id].current);
+                }, 5000);
+            });
+        }
+
+        function showSlide(id, n) {
+            const container = slideshows[id].container;
+            const slides = container.querySelectorAll('.slide');
+            const dots = container.querySelectorAll('.dot');
+
+            if (n >= slides.length) slideshows[id].current = 0;
+            if (n < 0) slideshows[id].current = slides.length - 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[slideshows[id].current].classList.add('active');
+            dots[slideshows[id].current].classList.add('active');
+        }
+
+        function changeSlide(id, n) {
+            if (!slideshows[id]) return;
+            clearInterval(slideshows[id].auto);
+            slideshows[id].current += n;
+            showSlide(id, slideshows[id].current);
+
+            // Resume auto play
+            slideshows[id].auto = setInterval(() => {
+                slideshows[id].current = (slideshows[id].current + 1) % slideshows[id].total;
+                showSlide(id, slideshows[id].current);
+            }, 5000);
+        }
+
+        function currentSlide(id, n) {
+            if (!slideshows[id]) return;
+            clearInterval(slideshows[id].auto);
+            slideshows[id].current = n - 1;
+            showSlide(id, slideshows[id].current);
+
+            // Resume auto play
+            slideshows[id].auto = setInterval(() => {
+                slideshows[id].current = (slideshows[id].current + 1) % slideshows[id].total;
+                showSlide(id, slideshows[id].current);
+            }, 5000);
+        }
+
+        // Initialize slideshows when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.slideshow-container').forEach(container => {
+                createSlideshow(container);
+            });
+        });
+    </script>
 </body>
 </html>
