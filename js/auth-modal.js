@@ -7,48 +7,25 @@
     const authModal = document.getElementById('authModal');
     if (!authModal) return;
 
-    const loginBtn = document.getElementById('loginBtn');
-    const signupBtn = document.getElementById('signupBtn');
+    const authBtn = document.getElementById('authBtn');
     const closeBtn = authModal.querySelector('.close-btn');
-    const switchToSignup = document.getElementById('switchToSignup');
-    const modalTitle = document.getElementById('modalTitle');
-    const btnSubmit = authModal.querySelector('.btn-submit');
+    const authForm = document.getElementById('authForm');
+    const signupForm = document.getElementById('signupForm');
+    const btnSubmits = authModal.querySelectorAll('.btn-submit');
 
-    if (loginBtn) {
-      loginBtn.addEventListener('click', function (e) {
+    // Open modal: show both forms (toggle removed) and focus the first input of the login form
+    if (authBtn) {
+      authBtn.addEventListener('click', function (e) {
         e.preventDefault();
         authModal.style.display = 'flex';
-        modalTitle.textContent = 'Login to Nestori';
-        if (btnSubmit) btnSubmit.textContent = 'Login';
-        if (switchToSignup) switchToSignup.innerHTML = 'Sign Up';
+        try {
+          const first = authForm && authForm.querySelector('input');
+          if (first) first.focus();
+        } catch (err) { /* ignore */ }
       });
     }
 
-    if (signupBtn) {
-      signupBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        authModal.style.display = 'flex';
-        modalTitle.textContent = 'Create Your Account';
-        if (btnSubmit) btnSubmit.textContent = 'Sign Up';
-        if (switchToSignup) switchToSignup.innerHTML = 'Login';
-      });
-    }
-
-    if (switchToSignup) {
-      switchToSignup.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (modalTitle.textContent.includes('Login')) {
-          modalTitle.textContent = 'Create Your Account';
-          if (btnSubmit) btnSubmit.textContent = 'Sign Up';
-          switchToSignup.innerHTML = 'Login';
-        } else {
-          modalTitle.textContent = 'Login to Nestori';
-          if (btnSubmit) btnSubmit.textContent = 'Login';
-          switchToSignup.innerHTML = 'Sign Up';
-        }
-      });
-    }
-
+    // Close modal
     if (closeBtn) {
       closeBtn.addEventListener('click', function () {
         authModal.style.display = 'none';
@@ -59,15 +36,14 @@
       if (e.target === authModal) authModal.style.display = 'none';
     });
 
-    const authForm = document.getElementById('authForm');
+    // Handle login form submission
     if (authForm) {
       authForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        // Send form to backend (submit.php) with action=login|signup
         const formData = new FormData(authForm);
-        const action = (btnSubmit && btnSubmit.textContent && btnSubmit.textContent.toLowerCase().includes('sign')) ? 'signup' : 'login';
-        formData.append('action', action);
+        formData.append('action', 'login');
 
+        const btnSubmit = authForm.querySelector('.btn-submit');
         if (btnSubmit) btnSubmit.disabled = true;
 
         fetch('submit.php', {
@@ -75,24 +51,78 @@
           body: formData,
         })
           .then(function (res) {
-            // Try JSON first, fallback to text
             return res.json().catch(function () { return res.text(); });
           })
           .then(function (data) {
             if (typeof data === 'object') {
               if (data.success) {
-                alert(data.message || 'Success');
+                alert(data.message || 'Login successful');
               } else {
-                alert(data.message || 'Authentication failed');
+                alert(data.message || 'Login failed');
               }
             } else {
-              // text response
               alert(String(data));
             }
-            authModal.style.display = 'none';
+            if (data.success) authModal.style.display = 'none';
           })
           .catch(function (err) {
-            console.error('Auth request failed', err);
+            console.error('Login request failed', err);
+            alert('Request failed. Check console for details.');
+          })
+          .finally(function () {
+            if (btnSubmit) btnSubmit.disabled = false;
+          });
+      });
+    }
+
+    // Handle signup form submission
+    if (signupForm) {
+      signupForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const password = document.getElementById('signupPassword').value;
+        const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+
+        if (password.length < 6) {
+          alert('Password must be at least 6 characters!');
+          return;
+        }
+
+        const formData = new FormData(signupForm);
+        formData.append('action', 'signup');
+        formData.append('email', document.getElementById('signupEmail').value);
+        formData.append('password', password);
+        formData.append('name', document.getElementById('signupName').value);
+
+        const btnSubmit = signupForm.querySelector('.btn-submit');
+        if (btnSubmit) btnSubmit.disabled = true;
+
+        fetch('submit.php', {
+          method: 'POST',
+          body: formData,
+        })
+          .then(function (res) {
+            return res.json().catch(function () { return res.text(); });
+          })
+          .then(function (data) {
+            if (typeof data === 'object') {
+              if (data.success) {
+                alert(data.message || 'Account created successfully');
+              } else {
+                alert(data.message || 'Signup failed');
+              }
+            } else {
+              alert(String(data));
+            }
+            if (data.success) authModal.style.display = 'none';
+          })
+          .catch(function (err) {
+            console.error('Signup request failed', err);
             alert('Request failed. Check console for details.');
           })
           .finally(function () {
