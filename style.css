@@ -503,6 +503,42 @@ footer span {
 
 
 /* ------------------------------------
+   LAYOUT HELPERS & NAV ADJUSTMENTS
+   - Constrain very-wide layouts
+   - Improve navbar behavior on small screens
+------------------------------------ */
+
+/* Reusable max-width wrapper for large screens */
+.container-max {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Constrain hero content without editing HTML */
+.hero-content {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
+}
+
+/* Small navbar tweaks to avoid overlap on narrow screens */
+.navbar { flex-wrap: wrap; }
+.navbar .container { display: flex; align-items: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  /* Ensure collapse toggler is visible and buttons stack nicely */
+  .navbar-buttons { width: 100%; display: flex; flex-direction: row; gap: 8px; justify-content: flex-end; margin-top: 8px; }
+  .navbar-buttons .btn { padding: 8px 12px; font-size: 14px; }
+  /* If you prefer the buttons inside the collapsed menu, add duplicates with .navbar-buttons-mobile inside the collapse */
+}
+
+
+/* ------------------------------------
    AUTH MODAL STYLES(LOGIN/SIGNUP)
 ------------------------------------ */
 .auth-modal {
