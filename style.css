@@ -64,6 +64,10 @@ h2 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+.navbar-collapse {
+  margin-left: 2rem;
+}
+
 .nav-link {
   font-weight: 400;
   font-size: 16px;
@@ -76,6 +80,13 @@ h2 {
 }
 
 /* Desktop Navbar Buttons */
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
 .navbar-buttons .btn {
   border-radius: 20px;
   padding: 6px 16px;
