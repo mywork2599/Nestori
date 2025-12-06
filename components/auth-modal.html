@@ -3,37 +3,59 @@
   <div class="auth-content">
     <span class="close-btn">&times;</span>
 
-    <!-- Forms displayed side-by-side (toggle removed; both forms are always visible) -->
-    <div class="auth-forms-wrapper">
-      <!-- Login Form -->
-      <form id="authForm" class="auth-form-content auth-form">
-        <h3 class="form-heading">Login</h3>
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Email Address" required>
+    <div class="auth-container">
+        <!-- Left Side: Logo/Brand Area -->
+        <div class="auth-left">
+          <div class="logo-area">
+            <!-- Add your company logo here. Replace the src path with your actual logo file if needed. -->
+            <img src="components/logo-vertical.png" alt="Nestori logo" class="company-logo">
+          </div>
         </div>
-        <div class="form-group">
-          <input type="password" id="password" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn-submit">Login</button>
-      </form>
 
-      <!-- Signup Form -->
-      <form id="signupForm" class="auth-form-content auth-form">
-        <h3 class="form-heading">Sign Up</h3>
-        <div class="form-group">
-          <input type="text" id="signupName" placeholder="Full Name" required>
+        <!-- Right Side: Forms with Toggle -->
+        <div class="auth-right">
+          <!-- Welcome Title -->
+          <div class="modal-welcome">Welcome to Nestori</div>
+
+          <!-- Toggle Button Bar -->
+          <div class="auth-toggle-bar">
+            <button type="button" class="toggle-btn login-btn active" data-form="login">Login</button>
+            <button type="button" class="toggle-btn signup-btn" data-form="signup">Sign Up</button>
+          </div>
+
+          <!-- Forms Sliding Container -->
+          <div class="auth-forms-wrapper">
+          <!-- Login Form -->
+          <form id="authForm" class="auth-form-content auth-form login-form active">
+            <h3 class="form-heading">Login</h3>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-submit">Login</button>
+          </form>
+
+          <!-- Signup Form -->
+          <form id="signupForm" class="auth-form-content auth-form signup-form">
+            <h3 class="form-heading">Sign Up</h3>
+            <div class="form-group">
+              <input type="text" id="signupName" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="signupEmail" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn-submit">Sign Up</button>
+          </form>
         </div>
-        <div class="form-group">
-          <input type="email" id="signupEmail" placeholder="Email Address" required>
-        </div>
-        <div class="form-group">
-          <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
-        </div>
-        <div class="form-group">
-          <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
-        </div>
-        <button type="submit" class="btn-submit">Sign Up</button>
-      </form>
+      </div>
     </div>
   </div>
 </div>
