@@ -855,7 +855,7 @@ footer span {
   background: transparent;
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  
   width: 420px;
   box-sizing: border-box;
   border: 1px solid transparent;
@@ -880,7 +880,7 @@ footer span {
 .auth-form:hover,
 .auth-form:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+ 
   border-color: rgba(84,164,100,0.12);
 }
 
