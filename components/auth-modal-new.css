@@ -62,13 +62,22 @@
 
 /* Left Side - Logo Area */
 .auth-left {
-  width: 40%;
-  background: linear-gradient(135deg, #54a464, #6ed68a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  flex-shrink: 0;
+ 
+  background:linear-gradient(180deg,#ffffff 0%, #ffffff 100%);
+  color:#fff;
+  flex:0 0 280px;
+  padding:28px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.auth-left .company-logo{max-width:110px;margin-bottom:14px;opacity:0.95}
+.auth-left .property-title{margin:0 0 6px;font-size:18px;font-weight:700}
+.auth-left .property-sub{margin:0;font-size:13px;opacity:0.9}
+.auth-right{
+  flex:1 1 auto;
+  padding:22px 28px;
 }
 
 .logo-area {
@@ -80,6 +89,7 @@
   max-width: 150px;
   max-height: 150px;
   margin-bottom: 20px;
+  opacity: 0.95;
 }
 
 /* Right Side - Forms */
