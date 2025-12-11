@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const components = [
     { html: 'components/auth-modal.html', script: 'js/auth-modal.js' },
+    { html: 'components/property-modal.html', script: 'components/property-modal.js' },
   ];
 
   components.forEach(function (comp) {
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (comp.script) {
           var s = document.createElement('script');
           s.src = comp.script;
-          s.defer = true;
           document.body.appendChild(s);
         }
       })

@@ -3,13 +3,12 @@
   position:fixed;
   inset:0;
   display:none;
-  align-items:center;
-  justify-content:center;
   background:rgba(0,0,0,0.55);
   z-index:2000;
-  padding:20px;
+  justify-content:center;
+  align-items:center;
 }
-.property-content{
+.property-modal-content{
   background:#ffffff;
   width:900px;
   max-width:980px;
@@ -65,7 +64,7 @@
 .btn-submit{background:linear-gradient(135deg,#54a464,#3f8850);color:#fff;border:none;padding:10px 16px;border-radius:6px;font-weight:700}
 .btn-submit[disabled]{opacity:0.7;cursor:not-allowed}
 .btn-cancel{background:#ffffff;border:1px solid #e6e6e6;padding:10px 14px;border-radius:6px;color:#333}
-.close-btn-property{position:absolute;right:14px;top:10px;font-size:26px;color:#fff;background:transparent;cursor:pointer}
+.close-btn-property{position:absolute;right:14px;top:10px;font-size:26px;color:#333;background:transparent;cursor:pointer}
 
 /* Image preview grid */
 .image-preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}

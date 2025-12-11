@@ -1,0 +1,73 @@
+<!-- Property Listing Modal -->
+<div id="propertyModal" class="property-modal">
+  <div class="property-modal-content">
+
+    <span class="close-btn-property">&times;</span>
+
+    <div class="property-modal-left">
+      <img src="components/logo-vertical.png" alt="Nestori logo" class="property-logo">
+      <h2>List Your Property</h2>
+      <p>Reach thousands of renters. Free listing.</p>
+    </div>
+
+    <div class="property-modal-right">
+      <form id="propertyForm">
+
+        <input type="text" id="propTitle" placeholder="Property Title" required>
+
+        <div class="two-col">
+          <select id="propCity" required>
+            <option value="">Select City</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Chennai</option>
+            <option>Kolkata</option>
+            <option>Hyderabad</option>
+          </select>
+
+          <select id="propType" required>
+            <option value="">Property Type</option>
+            <option>PG / Hostel</option>
+            <option>Flat / Apartment</option>
+            <option>Independent House</option>
+            <option>Office Space</option>
+          </select>
+        </div>
+
+        <div class="two-col">
+          <input type="number" id="bedrooms" placeholder="Bedrooms" required>
+          <input type="number" id="bathrooms" placeholder="Bathrooms" required>
+        </div>
+
+        <div class="two-col">
+          <input type="number" id="rent" placeholder="Monthly Rent (INR)" required>
+          <input type="text" id="pincode" placeholder="Pincode" required>
+        </div>
+
+        <input type="text" id="contactName" placeholder="Contact Name" required>
+
+        <div class="two-col">
+          <input type="email" id="contactEmail" placeholder="Email" required>
+          <input type="tel" id="contactPhone" placeholder="Phone" required>
+        </div>
+
+        <textarea id="description" placeholder="Short Description (optional)" rows="3"></textarea>
+
+        <label>Photos (optional)</label>
+        <input type="file" id="images" multiple accept="image/*">
+        <div id="imagePreview"></div>
+
+        <div id="uploadProgress" style="display:none;">
+          <div class="upload-progress-bar" style="width:0%; height:10px; background:#007bff;"></div>
+        </div>
+
+        <div id="formMessage"></div>
+
+        <button type="submit" class="property-submit">Submit Listing</button>
+      </form>
+    </div>
+
+  </div>
+</div>

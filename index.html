@@ -137,92 +137,7 @@
         </div>
       </div>
     </div>
-          <!-- Property Listing Modal -->
-          <div id="propertyModal" class="property-modal">
-            <div class="property-content">
-              <span class="close-btn-property">&times;</span>
-
-              <div class="property-container">
-                <div class="property-left">
-                  <div class="logo-area">
-                    <img src="components/logo-vertical.png" alt="Nestori logo" class="company-logo">
-                    <h4 class="property-title">List Your Property</h4>
-                    <p class="property-sub">Reach thousands of renters. Free listing.</p>
-                  </div>
-                </div>
-
-                <div class="property-right">
-                  <form id="propertyForm" class="property-form" data-endpoint="http://localhost:3000/api/listings">
-                    <div class="form-row">
-                      <input type="text" id="propTitle" placeholder="Property title (e.g. Cozy 2BHK in Bandra)" required>
-                    </div>
-
-                    <div class="form-row two-col">
-                      <select id="propCity" required>
-                        <option value="">Select City</option>
-                        <option>Mumbai</option>
-                        <option>Delhi</option>
-                        <option>Bangalore</option>
-                        <option>Hyderabad</option>
-                        <option>Pune</option>
-                        <option>Chennai</option>
-                        <option>Kolkata</option>
-                      </select>
-                      <select id="propType" required>
-                        <option value="">Property type</option>
-                        <option>PG / Hostel</option>
-                        <option>Flat / Apartment</option>
-                        <option>Independent House</option>
-                        <option>Office Space</option>
-                      </select>
-                    </div>
-
-                    <div class="form-row two-col">
-                      <input type="number" id="bedrooms" placeholder="Bedrooms" min="0" required>
-                      <input type="number" id="bathrooms" placeholder="Bathrooms" min="0" required>
-                    </div>
-
-                    <div class="form-row two-col">
-                      <input type="number" id="rent" placeholder="Monthly rent (INR)" min="0" required>
-                      <input type="text" id="pincode" placeholder="Pincode" required>
-                    </div>
-
-                    <div class="form-row">
-                      <input type="text" id="contactName" placeholder="Contact name" required>
-                    </div>
-
-                    <div class="form-row two-col">
-                      <input type="email" id="contactEmail" placeholder="Contact email" required>
-                      <input type="tel" id="contactPhone" placeholder="Contact phone" required>
-                    </div>
-
-                    <div class="form-row">
-                      <label class="file-label">Photos (optional)</label>
-                      <input type="file" id="images" accept="image/*" multiple>
-                      <div id="imagePreview" class="image-preview"></div>
-                    </div>
-
-                    <div class="form-row">
-                      <textarea id="description" rows="4" placeholder="Short description (amenities, landmarks, rules)..."></textarea>
-                    </div>
-
-                    <div class="form-row form-terms">
-                      <label><input type="checkbox" id="termsCheck" required> I agree to the <a href="#">terms</a>.</label>
-                    </div>
-
-                    <div id="formMessage" class="form-message" aria-live="polite"></div>
-                    <div id="uploadProgress" class="upload-progress" style="display:none" aria-hidden="true">
-                      <div class="upload-progress-bar" style="width:0%"></div>
-                    </div>
-                    <div class="form-row form-actions">
-                      <button type="submit" class="btn btn-submit">Submit Listing</button>
-                      <button type="button" class="btn btn-cancel">Cancel</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          
   </div>
 
   <!-- Loader for shared components -->
@@ -276,13 +191,13 @@
     <div class="dual-half left-half">
       <h3>NestPro</h3>
       <p>Manage your rentals like a pro.</p>
-      <button class="dual-btn">Know More</button>
+      <a class="dual-btn" href="LandlordPortal.html" target="_blank" rel="noopener">Know More</a>
     </div>
 
     <div class="dual-half right-half">
       <h3>NestIn</h3>
       <p>Manage your stay in a smarter way.</p>
-      <button class="dual-btn">Know More</button>
+      <a class="dual-btn" href="TenantDashboard.html" target="_blank" rel="noopener">Know More</a>
     </div>
   </section>
 
@@ -294,7 +209,10 @@
   <section class="cta-section text-center py-5">
     <h2>Are You a Landlord?</h2>
     <p>Join Nestori and list your property for free!</p>
-    <button id="listPropertyBtn" class="btn btn-light" onclick="(window.openPropertyModal||(()=>{}))()">List Your Property</button>
+    <button id="listPropertyBtn" class="btn btn-light" onclick="openPropertyModal()">List Your Property</button>
+  </section>
+
+
   </section>
 
   <!-- Footer -->
@@ -310,8 +228,6 @@
 
   <!-- Auth Modal Script -->
   <script src="components/auth-modal.js"></script>
-  <!-- Property Modal Script -->
-  <script src="components/property-modal.js"></script>
 </body>
 </html>
 <!--  -->

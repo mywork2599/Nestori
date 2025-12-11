@@ -1,3 +1,39 @@
+// Property Listing Modal Logic
+document.addEventListener('DOMContentLoaded', function() {
+  var listBtn = document.getElementById('listPropertyBtn');
+  var modal = document.getElementById('propertyListingModal');
+  var closeBtn = document.getElementById('closePropertyModal');
+  var cancelBtn = document.getElementById('cancelPropertyModal');
+
+  if (listBtn && modal) {
+    listBtn.addEventListener('click', function() {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Form submission (demo only)
+  var form = document.getElementById('propertyListingForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var msg = document.getElementById('formMessage');
+      msg.textContent = 'Thank you! Your property listing has been submitted.';
+      msg.style.color = '#28a745';
+      setTimeout(closeModal, 2000);
+      form.reset();
+    });
+  }
+});
 // ===============================
 // 📸 IMAGE SLIDESHOW
 // ===============================
@@ -293,3 +329,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+
+
+// ======================
+// PROPERTY MODAL (FIXED)
+// ======================
+
+
+
+function openPropertyModal() {
+  // Your code here
+  document.getElementById('propertyModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
