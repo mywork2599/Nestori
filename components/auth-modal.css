@@ -9,12 +9,15 @@
   align-items:center;
 }
 .auth-content{
-  background:#ffffff;
-  width:900px;
-  max-width:980px;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1000px;
+  height: 550px;
+  display: flex;
+  overflow: hidden;
 }
 
 .close-btn {
@@ -44,7 +47,7 @@
 
 /* Left Side - Logo Area */
 .auth-left {
-  background:linear-gradient(180deg,#54a464 0%, #6ed68a 100%);
+  background:linear-gradient(180deg,rgba(0,0,0,0));
   color:#fff;
   flex:0 0 280px;
   padding:28px 20px;
@@ -56,7 +59,14 @@
 
 .company-logo{max-width:110px;margin-bottom:14px;opacity:0.95}
 
-.auth-left h2{margin:0 0 6px;font-size:18px;font-weight:700}
+.auth-left h2{
+  color: #54a464;
+    font-family: 'Monoton', cursive;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: normal;
+}
 .auth-left p{margin:0;font-size:13px;opacity:0.9}
 
 /* Welcome heading shown above forms */
