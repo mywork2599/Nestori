@@ -8,6 +8,10 @@
   justify-content:center;
   align-items:center;
 }
+
+.auth-modal.show {
+  display: flex;
+}
 .auth-content{
   position: relative;
   background: white;
