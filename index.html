@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Auth Modal CSS -->
-  <link rel="stylesheet" href="components/auth-modal-new.css" />
+  <link rel="stylesheet" href="components/auth-modal.css" />
   <!-- Property Modal CSS -->
   <link rel="stylesheet" href="components/property-modal.css" />
 
@@ -78,67 +78,7 @@
   <!-- Component will be injected at the end of <body> by `js/load-components.js` -->
   <!-- No inline modal markup here — keeps pages DRY. -->
 
-  <!-- Auth Modal Component -->
-  <!-- Auth Modal Component: insert this into pages via JS loader -->
-<div id="authModal" class="auth-modal">
-  <div class="auth-content">
-    <span class="close-btn">&times;</span>
 
-    <div class="auth-container">
-        <!-- Left Side: Logo/Brand Area -->
-        <div class="auth-left">
-        <!---->  
-          <h1>Welcome to</h1><h2>Nestori</h2>
-          
-        </div>
-
-        <!-- Right Side: Forms with Toggle -->
-        <div class="auth-right">
-          <!-- Welcome Title -->
-          
-
-          <!-- Toggle Button Bar -->
-          <div class="auth-toggle-bar">
-            <button type="button" class="toggle-btn login-btn active" data-form="login">Login</button>
-            <button type="button" class="toggle-btn signup-btn" data-form="signup">Sign Up</button>
-          </div>
-
-          <!-- Forms Sliding Container -->
-          <div class="auth-forms-wrapper">
-          <!-- Login Form -->
-          <form id="authForm" class="auth-form-content auth-form login-form active">
-            <h3 class="form-heading">Login</h3>
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn-submit">Login</button>
-          </form>
-
-          <!-- Signup Form -->
-          <form id="signupForm" class="auth-form-content auth-form signup-form">
-            <h3 class="form-heading">Sign Up</h3>
-            <div class="form-group">
-              <input type="text" id="signupName" placeholder="Full Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="signupEmail" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
-            </div>
-            <div class="form-group">
-              <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
-            </div>
-            <button type="submit" class="btn-submit">Sign Up</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
   <!-- Loader for shared components -->
   <script src="js/load-components.js"></script>

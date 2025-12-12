@@ -1,6 +1,6 @@
 // Auth Modal Script - Toggle and Form Handling
 
-document.addEventListener('DOMContentLoaded', function() {
+function initAuthModal() {
   const authModal = document.getElementById('authModal');
   const closeBtn = document.querySelector('.close-btn');
   const toggleBtns = document.querySelectorAll('.toggle-btn');
@@ -109,4 +109,11 @@ function openSignupModal() {
     authModal.classList.add('show');
     signupBtn.click();
   }
+}
+
+// Initialize modal if already present, else wait for DOM
+if (document.getElementById('authModal')) {
+  initAuthModal();
+} else {
+  document.addEventListener('DOMContentLoaded', initAuthModal);
 }

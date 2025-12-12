@@ -2,7 +2,7 @@
 // Fetch and inject HTML components, then load their scripts.
 document.addEventListener('DOMContentLoaded', function () {
   const components = [
-    { html: 'components/auth-modal.html', script: 'js/auth-modal.js' },
+    { html: 'components/auth-modal.html', script: 'components/auth-modal.js' },
     { html: 'components/property-modal.html', script: 'components/property-modal.js' },
   ];
 
