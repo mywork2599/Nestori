@@ -9,6 +9,12 @@ function initAuthModal() {
   const loginFormContent = document.querySelector('.login-form');
   const signupFormContent = document.querySelector('.signup-form');
 
+  // Attach to authBtn
+  const authBtn = document.getElementById('authBtn');
+  if (authBtn) {
+    authBtn.addEventListener('click', openAuthModal);
+  }
+
   // Close modal when X is clicked
   if (closeBtn) {
     closeBtn.addEventListener('click', function() {
