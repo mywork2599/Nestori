@@ -246,6 +246,93 @@
   transform: translateY(0);
 }
 
+/* OTP Section */
+.otp-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.otp-section .form-group {
+  margin-bottom: 15px;
+}
+
+.otp-section input {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Registration Form */
+.registration-form {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #666;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* Google Button */
+.btn-google {
+  width: 100%;
+  padding: 12px 20px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.btn-google:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.btn-google::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(45deg, #ea4335 0%, #ea4335 25%, #fbcc05 25%, #fbcc05 50%, #34a853 50%, #34a853 75%, #4285f4 75%, #4285f4 100%);
+  border-radius: 2px;
+  position: relative;
+}
+
+.btn-google::after {
+  content: 'Gmail';
+  font-weight: 600;
+  color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .auth-content {

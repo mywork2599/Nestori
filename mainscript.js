@@ -318,17 +318,7 @@ function handleSearch(event) {
   start();
 })();
 
-// ===============================
-// 👤 AUTH MODAL - ACCOUNT BUTTON
-// ===============================
-document.addEventListener("DOMContentLoaded", function() {
-  const authBtn = document.getElementById("authBtn");
-  if (authBtn) {
-    authBtn.addEventListener("click", function() {
-      openAuthModal();
-    });
-  }
-});
+
 
 
 
