@@ -90,69 +90,398 @@
   <!-- Hero Section -->
   <section class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center">
     <div class="hero-content container-max">
-      <h1 class="display-4">Welcome to <span class="logo-text">Nestori</span></h1>
-      <p class="lead">Find Your Nest, Write Your Story.</p>
+      <h1 class="display-4">Find Your Perfect <span class="logo-text">Home</span> with Nestori</h1>
+      <p class="lead">Discover verified rentals, connect with roommates, and manage your property seamlessly across India.</p>
 
-     <form class="search-bar mt-4" onsubmit="handleSearch(event)">
-  <!-- City Dropdown -->
-  <div class="dropdown">
-    <button type="button" class="dropdown-btn" id="dropdownBtn">
-      <span id="selectedCity">Select City</span>
-      <span class="arrow">▼</span>
-    </button>
-    <ul class="dropdown-list" id="dropdownList">
-      <li>Mumbai</li>
-      <li>Delhi</li>
-      <li>Bangalore</li>
-      <li>Hyderabad</li>
-      <li>Pune</li>
-      <li>Chennai</li>
-      <li>Kolkata</li>
-    </ul>
-  </div>
+      <form class="search-bar mt-4" onsubmit="handleSearch(event)">
+        <!-- City Dropdown -->
+        <div class="dropdown">
+          <button type="button" class="dropdown-btn" id="dropdownBtn">
+            <span id="selectedCity">Select City</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul class="dropdown-list" id="dropdownList">
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Bangalore</li>
+            <li>Hyderabad</li>
+            <li>Pune</li>
+            <li>Chennai</li>
+            <li>Kolkata</li>
+          </ul>
+        </div>
 
-  <!-- Property Type Toggle Buttons -->
-  <div class="property-type-group">
-    <button type="button" class="property-type-btn active" data-type="PG / Hostel">PG / Hostel</button>
-    <button type="button" class="property-type-btn" data-type="Flat / Apartment">Flat / Apartment</button>
-    <button type="button" class="property-type-btn" data-type="Independent House">Independent House</button>
-    <button type="button" class="property-type-btn" data-type="Office Space">Office Space</button>
-  </div>
+        <!-- Property Type Toggle Buttons -->
+        <div class="property-type-group">
+          <button type="button" class="property-type-btn active" data-type="PG / Hostel">PG / Hostel</button>
+          <button type="button" class="property-type-btn" data-type="Flat / Apartment">Flat / Apartment</button>
+          <button type="button" class="property-type-btn" data-type="Independent House">Independent House</button>
+          <button type="button" class="property-type-btn" data-type="Office Space">Office Space</button>
+        </div>
 
-  <!-- Search Input -->
-  <input type="text" id="searchInput" placeholder="Search by landmark, area, or pincode..." />
+        <!-- Search Input -->
+        <input type="text" id="searchInput" placeholder="Search by landmark, area, or pincode..." />
 
-  <!-- Search Button -->
-  <button type="submit" class="search-btn">🔍 Search</button>
-</form>
+        <!-- Search Button -->
+        <button type="submit" class="search-btn">🔍 Search</button>
+      </form>
 
+      <!-- Quick Stats -->
+      <div class="hero-stats mt-4">
+        <div class="stat-item">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Properties</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1M+</span>
+          <span class="stat-label">Happy Tenants</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Cities Covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Why Choose Nestori?</h2>
+          <p class="section-subtitle">We make finding and managing rentals simple, secure, and stress-free.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h4>Verified Properties</h4>
+            <p>All listings are personally verified by our team to ensure quality and authenticity.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"></path>
+              </svg>
+            </div>
+            <h4>Roommate Matching</h4>
+            <p>Find compatible roommates based on lifestyle, preferences, and budget.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h4>Smart Management</h4>
+            <p>Manage rentals, payments, and maintenance with our comprehensive dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works-section bg-light">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Get started in just three simple steps.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Search & Discover</h4>
+            <p>Browse through thousands of verified properties in your preferred location.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Connect & Verify</h4>
+            <p>Contact owners directly or use our roommate matching feature.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Move In</h4>
+            <p>Complete documentation and start your new chapter with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Cities Section -->
+  <section class="cities-section py-5">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Popular Cities</h2>
+          <p class="section-subtitle">Find your perfect home in these vibrant cities.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="city-card" data-city="Mumbai">
+            <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400');">
+              <div class="city-overlay">
+                <h5 style="color: #ffffff;">Mumbai</h5>
+                <span>15K+ Properties</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="city-card" data-city="Delhi">
+            <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=400');">
+              <div class="city-overlay">
+                <h5 style="color: #ffffff;">Delhi</h5>
+                <span>12K+ Properties</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="city-card" data-city="Bangalore">
+            <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400');">
+              <div class="city-overlay">
+                <h5 style="color: #ffffff;">Bangalore</h5>
+                <span>18K+ Properties</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="city-card" data-city="Pune">
+            <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=400');">
+              <div class="city-overlay">
+                <h5 style="color: #ffffff;">Pune</h5>
+                <span>8K+ Properties</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">What Our Users Say</h2>
+          <p class="section-subtitle">Real stories from real people who found their perfect home.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Nestori made finding my first apartment in Mumbai so easy! The verification process gave me peace of mind."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100" alt="Priya S.">
+              <div>
+                <h6>Priya Sharma</h6>
+                <span>Student, Mumbai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"As a landlord, Nestori's management tools have streamlined everything. Highly recommended!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Rajesh K.">
+              <div>
+                <h6>Rajesh Kumar</h6>
+                <span>Property Owner, Delhi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Found amazing roommates through Nestori's matching system. Living has never been this fun!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Ananya R.">
+              <div>
+                <h6>Ananya Reddy</h6>
+                <span>Working Professional, Bangalore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Section -->
   <section class="dual-section-full">
     <div class="dual-half left-half">
       <h3>NestPro</h3>
-      <p>Manage your rentals like a pro.</p>
+      <p>Professional property management tools for landlords and property managers.</p>
       <a class="dual-btn" href="LandlordPortal.html" target="_blank" rel="noopener">Know More</a>
     </div>
 
     <div class="dual-half right-half">
       <h3>NestIn</h3>
-      <p>Manage your stay in a smarter way.</p>
+      <p>Smart tenant dashboard to manage your stay, payments, and maintenance requests.</p>
       <a class="dual-btn" href="TenantDashboard.html" target="_blank" rel="noopener">Know More</a>
     </div>
   </section>
 
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="newsletter-content">
+            <h2 class="section-title text-white mb-3">Stay Updated with Nestori</h2>
+            <p class="text-white opacity-75 mb-0">Get the latest property listings, rental tips, and exclusive deals delivered to your inbox.</p>
+          </div>
+        </div>
 
-
-
-
-  <!-- CTA -->
-  <section class="cta-section text-center py-5">
-    <h2>Are You a Landlord?</h2>
-    <p>Join Nestori and list your property for free!</p>
-    <button id="listPropertyBtn" class="btn btn-light" onclick="openPropertyModal()">List Your Property</button>
+        <div class="col-lg-6">
+          <div class="newsletter-form">
+            <form class="d-flex flex-column flex-sm-row gap-3" onsubmit="handleNewsletter(event)">
+              <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                class="form-control flex-grow-1"
+                required
+              >
+              <button type="submit" class="btn btn-light px-4">Subscribe</button>
+            </form>
+            <p class="text-white-50 small mt-2 mb-0">We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Our Impact in Numbers</h2>
+          <p class="section-subtitle">Making rental housing accessible and transparent across India</p>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+            </div>
+            <div class="stat-number">50,000+</div>
+            <div class="stat-label">Verified Properties</div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zm-12 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <div class="stat-number">1,200,000+</div>
+            <div class="stat-label">Successful Matches</div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"></path>
+                <path d="M12 17h.01"></path>
+              </svg>
+            </div>
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Customer Satisfaction</div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="stat-number">4.8/5</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <div class="achievement-badges">
+            <span class="badge-item">🏆 Best Rental Platform 2024</span>
+            <span class="badge-item">🔒 SSL Secured</span>
+            <span class="badge-item">✅ Verified Listings</span>
+            <span class="badge-item">📱 Mobile Optimized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section text-center py-5">
+    <div class="container">
+      <h2>Ready to Find Your Perfect Home?</h2>
+      <p>Join thousands of satisfied tenants and landlords on Nestori.</p>
+      <div class="cta-buttons">
+        <button id="listPropertyBtn" class="btn btn-light mr-3" onclick="openPropertyModal()">List Your Property</button>
+        <a href="FindRental.html" class="btn btn-outline-light">Find Rentals</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
