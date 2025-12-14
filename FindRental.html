@@ -91,48 +91,122 @@
             <div class="card-body">
                 <h5 class="card-title">Search Rentals</h5>
                 <form>
+                    <!-- Location -->
                     <div class="form-group mb-3">
-                        <input type="text" class="form-control" placeholder="Enter City or Area">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter City or Area">
                     </div>
 
+                    <!-- Rent Range -->
                     <div class="form-row mb-3">
-                        <div class="col">
-                            <input type="number" class="form-control" placeholder="Min Rent ₹">
+                        <div class="col-6">
+                            <label for="minRent">Min Rent (₹)</label>
+                            <input type="number" class="form-control" id="minRent" placeholder="Min Rent">
                         </div>
-                        <div class="col">
-                            <input type="number" class="form-control" placeholder="Max Rent ₹">
-                        </div>
-                    </div>
-
-                    <label class="mt-2">Property Type</label>
-                    <div class="form-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chk1BHK_main" value="1BHK">
-                            <label class="form-check-label" for="chk1BHK_main">1 BHK</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chk2BHK_main" value="2BHK">
-                            <label class="form-check-label" for="chk2BHK_main">2 BHK</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chk3BHK_main" value="3BHK">
-                            <label class="form-check-label" for="chk3BHK_main">3 BHK</label>
+                        <div class="col-6">
+                            <label for="maxRent">Max Rent (₹)</label>
+                            <input type="number" class="form-control" id="maxRent" placeholder="Max Rent">
                         </div>
                     </div>
 
-                    <label>Furnishing</label>
-                    <div class="form-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chkFurnished_main" value="Furnished">
-                            <label class="form-check-label" for="chkFurnished_main">Furnished</label>
+                    <!-- Property Type -->
+                    <div class="form-group mb-3">
+                        <label for="propertyType">Property Type</label>
+                        <select class="form-control" id="propertyType">
+                            <option value="">Select Property Type</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="condo">Condo</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="studio">Studio</option>
+                        </select>
+                    </div>
+
+                    <!-- Bedrooms and Bathrooms -->
+                    <div class="form-row mb-3">
+                        <div class="col-6">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control" id="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1">1 Bedroom</option>
+                                <option value="2">2 Bedrooms</option>
+                                <option value="3">3 Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                            </select>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chkUnfurnished_main" value="Unfurnished">
-                            <label class="form-check-label" for="chkUnfurnished_main">Unfurnished</label>
+                        <div class="col-6">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control" id="bathrooms">
+                                <option value="">Any</option>
+                                <option value="1">1 Bathroom</option>
+                                <option value="2">2 Bathrooms</option>
+                                <option value="3">3+ Bathrooms</option>
+                            </select>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-block">Search</button>
+                    <!-- Move-in Date and Lease Term -->
+                    <div class="form-row mb-3">
+                        <div class="col-6">
+                            <label for="moveInDate">Move-in Date</label>
+                            <input type="date" class="form-control" id="moveInDate">
+                        </div>
+                        <div class="col-6">
+                            <label for="leaseTerm">Lease Term</label>
+                            <select class="form-control" id="leaseTerm">
+                                <option value="">Select Lease Term</option>
+                                <option value="month-to-month">Month-to-Month</option>
+                                <option value="6-months">6 Months</option>
+                                <option value="1-year">1 Year</option>
+                                <option value="2-years">2 Years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Furnishing Filter -->
+                    <div class="form-group mb-3">
+                        <label>Furnishing</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkFurnished" value="Furnished">
+                            <label class="form-check-label" for="chkFurnished">Furnished</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkSemiFurnished" value="Semi-Furnished">
+                            <label class="form-check-label" for="chkSemiFurnished">Semi-Furnished</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkUnfurnished" value="Unfurnished">
+                            <label class="form-check-label" for="chkUnfurnished">Unfurnished</label>
+                        </div>
+                    </div>
+
+                    <!-- Amenities Filter -->
+                    <div class="form-group mb-3">
+                        <label>Amenities</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkParking" value="Parking">
+                            <label class="form-check-label" for="chkParking">Parking</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkPetsAllowed" value="Pets Allowed">
+                            <label class="form-check-label" for="chkPetsAllowed">Pets Allowed</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkGym" value="Gym">
+                            <label class="form-check-label" for="chkGym">Gym</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkLaundry" value="Laundry">
+                            <label class="form-check-label" for="chkLaundry">Laundry</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="chkPool" value="Pool">
+                            <label class="form-check-label" for="chkPool">Pool</label>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button type="submit" class="btn btn-primary btn-block">Search Rentals</button>
                 </form>
             </div>
         </div>
