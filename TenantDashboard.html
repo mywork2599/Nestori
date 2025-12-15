@@ -1,150 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the webpage -->
-    <title>Nestori</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!--Link css file to the main file -->
+    <title>NestIn - Tenant Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
-     <!--Link css file to the main file -->
-     <link rel="stylesheet" href="tdstyle.css">
+    <link rel="stylesheet" href="tdstyle.css">
+    <link rel="stylesheet" href="rmstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="components/auth-modal.css">
-
-
-    <!--Favicon or Icon which represent the website-->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
     <link rel="manifest" href="favicon_Nestori/site.webmanifest">
-
-    <!--Text Used for the website-->
-
-    <!--Primary Text is Lato & Secondary Text is Monoton-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
 </head>
 <body>
-    <!-- Header section containing the navigation bar -->
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-      <div class="container">
-        <a class="navbar-brand logo" href="#">Nestori</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
-    <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
-    <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
-    <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">Nestin</a></li>
-    <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
-    <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
-    <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
-  </ul>
-                <!-- Account button only (collapse contains the controls) -->
-    <div class="navbar-buttons">
-        <button id="authBtn" class="btn auth-btn-custom" type="button">
-            <svg class="auth-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            <span class="auth-text">Account</span>
-        </button>
-    </div>
-
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Nestori</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="TenantDashboard.html">NestIn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    </ul>
+                    <div class="navbar-buttons">
+                        <button id="authBtn" class="btn auth-btn-custom" type="button">
+                            <svg class="auth-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="auth-text">Account</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- ===== Login / Signup Modal (shared component) ===== -->
-    <!-- The modal HTML and behavior are injected by `js/load-components.js`. -->
     <script src="js/load-components.js"></script>
 
-  <!-- ===== End of Modal (component) ===== -->
+    <!-- Page Heading -->
+    <div class="container text-center my-5">
+        <h1 class="display-4">Manage your stay in a smarter way</h1>
+        <p class="lead">Track payments, submit maintenance requests, and communicate with your landlord effortlessly.</p>
+    </div>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Tenant Dashboard</h1>
-        
+
         <!-- Lease Overview -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Lease Overview</h5>
-                <!-- Add lease details and summaries here -->
+                <h5 class="card-title"><i class="fas fa-file-contract"></i> Lease Overview</h5>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <h4 class="text-success">12 Months</h4>
+                        <p>Lease Term</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="text-success">₹25,000</h4>
+                        <p>Monthly Rent</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="text-warning">Jan 2025</h4>
+                        <p>Lease Expires</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary">View Full Lease</button>
             </div>
         </div>
-        
+
         <!-- Rental Payments -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Rental Payments</h5>
-                <!-- Add rental payment history and upcoming payments here -->
+                <h5 class="card-title"><i class="fas fa-credit-card"></i> Rental Payments</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Upcoming Payment</h6>
+                        <p class="text-success">₹25,000 due on 1st Dec 2024</p>
+                        <button class="btn btn-success">Pay Now</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Payment History</h6>
+                        <p>Last payment: ₹25,000 on 1st Nov 2024</p>
+                        <button class="btn btn-outline-primary">View History</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- Maintenance Requests -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Maintenance Requests</h5>
-                <!-- Add maintenance request status and history here -->
+                <h5 class="card-title"><i class="fas fa-tools"></i> Maintenance Requests</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Status</th>
+                                <th>Date Submitted</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Leaky faucet</td>
+                                <td><span class="badge badge-warning">In Progress</span></td>
+                                <td>15 Nov 2024</td>
+                                <td><button class="btn btn-sm btn-primary">Update</button></td>
+                            </tr>
+                            <tr>
+                                <td>Broken light</td>
+                                <td><span class="badge badge-success">Resolved</span></td>
+                                <td>10 Nov 2024</td>
+                                <td><button class="btn btn-sm btn-secondary">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-primary">Submit New Request</button>
             </div>
         </div>
-        
+
         <!-- Communication with Landlord -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Communication with Landlord</h5>
-                <!-- Add messaging system, notifications, etc. here -->
+                <h5 class="card-title"><i class="fas fa-comments"></i> Communication with Landlord</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Messages</h6>
+                        <p>Send messages to your landlord.</p>
+                        <button class="btn btn-success">Send Message</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Notifications</h6>
+                        <p>View important updates and reminders.</p>
+                        <button class="btn btn-success">View Notifications</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- Account Settings -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Account Settings</h5>
-                <!-- Add profile management, security settings, etc. here -->
+                <h5 class="card-title"><i class="fas fa-user-cog"></i> Account Settings</h5>
+                <p>Manage your profile, payment methods, and preferences.</p>
+                <button class="btn btn-primary">Edit Profile</button>
+                <button class="btn btn-outline-primary">Payment Methods</button>
             </div>
         </div>
-        
+
         <!-- Support and Help Resources -->
         <div class="card mb-4">
             <div class="card-body">
-                <h5 class="card-title">Support and Help Resources</h5>
-                <!-- Add FAQs, customer support options, etc. here -->
+                <h5 class="card-title"><i class="fas fa-question-circle"></i> Support and Help Resources</h5>
+                <p>Access FAQs, contact support, or find helpful resources.</p>
+                <button class="btn btn-primary">View FAQs</button>
+                <button class="btn btn-outline-primary">Contact Support</button>
             </div>
         </div>
     </div>
 
-      <!-- Footer section with copyright information -->
-      <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
-            <!-- Copyright notice -->
-            <span class="text-muted">2025 Nestori &TRADE;. All rights reserved.</span>
+            <span class="text-muted">© 2025 Nestori. All rights reserved.</span>
         </div>
     </footer>
 
-    <!-- Bootstrap and jQuery scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

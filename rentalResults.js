@@ -2,9 +2,9 @@ const listings = [
   {
     title: "PG for Girls in Koramangala",
     images: [
-      "https://source.unsplash.com/800x600/?pg,room",
-      "https://source.unsplash.com/800x600/?hostel,interior",
-      "https://source.unsplash.com/800x600/?girls,pg"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
     ],
     location: "Koramangala, Bengaluru",
     price: "₹8,000/month",
@@ -17,9 +17,9 @@ const listings = [
   {
     title: "2BHK Flat in Bandra West",
     images: [
-      "https://source.unsplash.com/800x600/?apartment,interior",
-      "https://source.unsplash.com/800x600/?flat,livingroom",
-      "https://source.unsplash.com/800x600/?apartment,balcony"
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
     ],
     location: "Bandra West, Mumbai",
     price: "₹38,000/month",
@@ -32,9 +32,9 @@ const listings = [
   {
     title: "Co-working Space in Cyber City",
     images: [
-      "https://source.unsplash.com/800x600/?office,workspace",
-      "https://source.unsplash.com/800x600/?coworking,office",
-      "https://source.unsplash.com/800x600/?workspace,interior"
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
     ],
     location: "Cyber City, Gurgaon",
     price: "₹12,000/seat/month",
@@ -47,9 +47,9 @@ const listings = [
   {
     title: "Studio Apartment in Indiranagar",
     images: [
-      "https://source.unsplash.com/800x600/?studio,apartment",
-      "https://source.unsplash.com/800x600/?studio,livingroom",
-      "https://source.unsplash.com/800x600/?apartment,interior"
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
     ],
     location: "Indiranagar, Bengaluru",
     price: "₹20,000/month",
@@ -62,9 +62,9 @@ const listings = [
   {
     title: "Shared Office Space in Salt Lake",
     images: [
-      "https://source.unsplash.com/800x600/?shared,office",
-      "https://source.unsplash.com/800x600/?office,desk",
-      "https://source.unsplash.com/800x600/?workspace,shared"
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
     ],
     location: "Salt Lake, Kolkata",
     price: "₹9,000/seat/month",
@@ -77,12 +77,12 @@ const listings = [
   {
     title: "1BHK Apartment in Andheri East",
     images: [
-      "https://source.unsplash.com/800x600/?1bhk,apartment",
-      "https://source.unsplash.com/800x600/?apartment,bedroom",
-      "https://source.unsplash.com/800x600/?livingroom,interior"
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
     ],
     location: "Andheri East, Mumbai",
-    price: "₹25,000/month",     
+    price: "₹25,000/month",
     type: "1 BHK Apartment",
     rating: 4.5,
     badge: "Customer Favorite",
@@ -92,32 +92,32 @@ const listings = [
   {
     title: "PG for Boys in Jayanagar",
     images: [
-      "https://source.unsplash.com/800x600/?pg,boysroom",               
-      "https://source.unsplash.com/800x600/?hostel,boys",
-      "https://source.unsplash.com/800x600/?boys,pg"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
     ],
     location: "Jayanagar, Bengaluru",
-    price: "₹7,500/month",    
+    price: "₹7,500/month",
     type: "PG / Hostel",
     rating: 4.2,
-    badge: "Frequently Booked", 
+    badge: "Frequently Booked",
     distance: "1.8 km",
     features: "Wi-Fi • Meals • Laundry • 24x7 Security"
   },
   {
     title: "3BHK Villa in Whitefield",
     images: [
-      "https://source.unsplash.com/800x600/?villa,exterior",  
-      "https://source.unsplash.com/800x600/?villa,interior",
-      "https://source.unsplash.com/800x600/?villa,garden"
-    ],  
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop"
+    ],
     location: "Whitefield, Bengaluru",
-    price: "₹60,000/month",    
+    price: "₹60,000/month",
     type: "3 BHK Villa",
     rating: 4.8,
-    badge: "Luxury Stay", 
+    badge: "Luxury Stay",
     distance: "4.0 km",
-    features: "Private Garden • Pool • Furnished • Parking"   
+    features: "Private Garden • Pool • Furnished • Parking"
   }
 ];
 

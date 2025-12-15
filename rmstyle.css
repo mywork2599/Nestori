@@ -31,7 +31,10 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, button, input {
 .rm-hero{
   background: linear-gradient(90deg,var(--green), #6bd07b);
   color: #fff;
-  padding: 36px 0;
+  padding: 5rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 .hero-inner { gap: 20px; }
 .hero-text .display-4 { font-weight:600; margin-bottom:6px; }

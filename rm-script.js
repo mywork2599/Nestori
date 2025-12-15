@@ -15,7 +15,7 @@ const sampleProfiles = [
     price: 7000,
     type: "PG",
     tags: ["clean","non-smoker"],
-    img: "https://source.unsplash.com/300x300/?woman,portrait"
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop"
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const sampleProfiles = [
     price: 12000,
     type: "Flat",
     tags: ["pets","night-owl"],
-    img: "https://source.unsplash.com/300x300/?man,portrait"
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const sampleProfiles = [
     price: 9000,
     type: "Flat",
     tags: ["clean","non-smoker","pets"],
-    img: "https://source.unsplash.com/300x300/?girl,portrait"
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop"
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const sampleProfiles = [
     price: 8000,
     type: "PG",
     tags: ["clean","non-smoker"],
-    img: "https://source.unsplash.com/300x300/?boy,portrait"
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop"
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const sampleProfiles = [
     price: 15000,
     type: "Flat",
     tags: ["pets","night-owl"],
-    img: "https://source.unsplash.com/300x300/?woman,smile"
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop"
   },
   {
     id: 6,
@@ -70,31 +70,31 @@ const sampleProfiles = [
     price: 11000,
     type: "Flat",
     tags: ["clean","non-smoker","pets"],
-    img: "https://source.unsplash.com/300x300 /?man,smile"
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop"
   },
-  { 
+  {
     id: 7,
     name: "Kavya",
-    age: 25,        
+    age: 25,
     gender: "female",
     city: "Chennai",
     price: 6000,
     type: "PG",
     tags: ["clean","non-smoker"],
-    img: "https://source.unsplash .com/300x300/?girl,smile"
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop"
   },
-  { 
+  {
     id: 8,
     name: "Vikram",
-    age: 31,            
-    gender: "male",      
+    age: 31,
+    gender: "male",
     city: "Mumbai",
     price: 14000,
     type: "Flat",
     tags: ["pets","night-owl"],
-    img: "https://source.unsplash.com/300x300/? boy,smile"
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop"
   }
-        
+
 
 ];
 
