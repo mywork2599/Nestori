@@ -742,6 +742,7 @@ footer span {
   top: 0;
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   background: rgba(0, 0, 0, 0.3);
   justify-content: center;
@@ -1336,55 +1337,90 @@ footer span {
 ------------------------------------ */
 
 .newsletter-section {
+  background: #f8f9fa;
+  padding: 5rem 0;
+}
+
+.newsletter-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 3rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.newsletter-icon {
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #54a464, #6ed68a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   color: white;
-  padding: 4rem 0;
+}
+
+.newsletter-icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .newsletter-content h2 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .newsletter-content p {
   font-size: 1.1rem;
   line-height: 1.6;
+  color: #666;
 }
 
 .newsletter-form .form-control {
-  border: none;
+  border: 1px solid #ddd;
   border-radius: 25px;
   padding: 12px 20px;
   font-size: 1rem;
-  background: white;
+  background: #f9f9fa;
   color: #333;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  height: 50px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .newsletter-form .form-control:focus {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-color: #54a464;
+  box-shadow: 0 4px 15px rgba(84, 164, 100, 0.2);
   outline: none;
 }
 
-.newsletter-form .btn {
-  background: white;
-  color: #54a464;
+.newsletter-form .btn-primary {
+  background: linear-gradient(135deg, #54a464, #6ed68a);
   border: none;
   border-radius: 25px;
-  padding: 12px 30px;
+  padding: 12px 20px;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(84, 164, 100, 0.2);
+  height: 50px;
+  white-space: nowrap;
 }
 
-.newsletter-form .btn:hover {
-  background: #54a464;
-  color: white;
+.newsletter-form .btn-primary:hover {
+  background: linear-gradient(135deg, #469055, #54a464);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(84, 164, 100, 0.3);
+  box-shadow: 0 4px 15px rgba(84, 164, 100, 0.4);
 }
 
 /* ------------------------------------
@@ -1413,8 +1449,8 @@ footer span {
 }
 
 .stat-icon {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, #54a464, #6ed68a);
   border-radius: 50%;
   display: flex;
@@ -1425,8 +1461,8 @@ footer span {
 }
 
 .stat-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .stat-number {
@@ -1509,10 +1545,11 @@ footer span {
     text-align: center;
   }
 
-  .newsletter-form .d-flex {
-    flex-direction: column;
-    align-items: center;
-  }
+.newsletter-form .d-flex {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem !important;
+}
 
   .achievement-badges {
     flex-direction: column;
