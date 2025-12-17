@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestori Shop - Rental Essentials</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Nestori</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">Nestin</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="Shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    </ul>
+                    <div class="navbar-buttons">
+                        <button id="authBtn" class="btn auth-btn-custom" type="button">
+                            <svg class="auth-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="auth-text">Account</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Heading -->
+    <div class="container text-center my-5">
+        <h1 class="display-4">Nestori Shop</h1>
+        <p class="lead">Everything you need to make your rental feel like home.</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+    <div class="container shop-container">
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="categories">
+                    <h5>Categories</h5>
+                    <ul>
+                        <li><a href="#" data-category="all">All</a></li>
+                        <li><a href="#" data-category="furniture">Furniture</a></li>
+                        <li><a href="#" data-category="appliances">Appliances</a></li>
+                        <li><a href="#" data-category="decor">Decor</a></li>
+                        <li><a href="#" data-category="essentials">Essentials</a></li>
+                    </ul>
+                </div>
+                <div class="cart-summary">
+                    <h5>Cart (<span id="cartCount">0</span>)</h5>
+                    <div id="cartItems"></div>
+                    <a href="checkout.html" id="checkoutBtn" class="btn btn-success btn-block">Checkout</a>
+                </div>
+            </aside>
+
+            <main class="col-md-9">
+                <div class="products" id="productsContainer">
+                    <!-- Furniture -->
+                    <div class="product-card" data-category="furniture">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Modern Sofa">
+                        <div class="product-info">
+                            <h5>Modern Sofa</h5>
+                            <p>Comfortable 3-seater sofa perfect for your living room.</p>
+                            <div class="price">₹25,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Modern Sofa" data-price="25000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="furniture">
+                        <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400" alt="Dining Table Set">
+                        <div class="product-info">
+                            <h5>Dining Table Set</h5>
+                            <p>6-seater dining table with chairs for family meals.</p>
+                            <div class="price">₹35,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Dining Table Set" data-price="35000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Appliances -->
+                    <div class="product-card" data-category="appliances">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="Refrigerator">
+                        <div class="product-info">
+                            <h5>Double Door Refrigerator</h5>
+                            <p>Energy-efficient fridge with ample storage space.</p>
+                            <div class="price">₹45,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Double Door Refrigerator" data-price="45000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="appliances">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400" alt="Washing Machine">
+                        <div class="product-info">
+                            <h5>Front Load Washing Machine</h5>
+                            <p>Efficient washing machine with multiple wash programs.</p>
+                            <div class="price">₹28,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Front Load Washing Machine" data-price="28000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Decor -->
+                    <div class="product-card" data-category="decor">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400" alt="Wall Art">
+                        <div class="product-info">
+                            <h5>Abstract Wall Art</h5>
+                            <p>Beautiful abstract painting to enhance your decor.</p>
+                            <div class="price">₹5,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Abstract Wall Art" data-price="5000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="decor">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Floor Lamp">
+                        <div class="product-info">
+                            <h5>Modern Floor Lamp</h5>
+                            <p>Stylish floor lamp with adjustable brightness.</p>
+                            <div class="price">₹8,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Modern Floor Lamp" data-price="8000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Essentials -->
+                    <div class="product-card" data-category="essentials">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Bedding Set">
+                        <div class="product-info">
+                            <h5>Complete Bedding Set</h5>
+                            <p>King size bedding set with pillows and comforter.</p>
+                            <div class="price">₹12,000</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Complete Bedding Set" data-price="12000">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="essentials">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="Kitchen Utensils Set">
+                        <div class="product-info">
+                            <h5>Kitchen Utensils Set</h5>
+                            <p>Complete set of essential kitchen utensils and tools.</p>
+                            <div class="price">₹3,500</div>
+                            <button class="btn btn-primary add-to-cart" data-product="Kitchen Utensils Set" data-price="3500">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Nestori. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>

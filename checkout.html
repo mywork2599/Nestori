@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Nestori Shop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .checkout-hero {
+            background: linear-gradient(135deg, #54a464, #6ed68a);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .checkout-form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .order-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            height: fit-content;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h4 {
+            color: #54a464;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .btn-place-order {
+            background: linear-gradient(135deg, #54a464, #6ed68a);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: 8px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-place-order:hover {
+            background: linear-gradient(135deg, #469055, #54a464);
+            transform: translateY(-2px);
+        }
+        .cart-item-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .total-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: #54a464;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Nestori</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FindRental.html">Find Rentals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="RoomateMatching.html">Roommate Matching</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LandlordPortal.html">NestPro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="TenantDashboard.html">Nestin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Sources.html">Sources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    </ul>
+                    <div class="navbar-buttons">
+                        <button id="authBtn" class="btn auth-btn-custom" type="button">
+                            <svg class="auth-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="auth-text">Account</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Heading -->
+    <div class="container text-center my-5">
+        <h1 class="display-4">Checkout</h1>
+        <p class="lead">Complete your order and get your rental essentials delivered.</p>
+    </div>
+
+    <div class="checkout-container">
+        <div class="row">
+            <div class="col-lg-8">
+                <form class="checkout-form" id="checkoutForm">
+                    <!-- Billing Information -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-user mr-2"></i>Billing Information</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Information -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-truck mr-2"></i>Shipping Information</h4>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" id="state" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="zipCode">ZIP Code</label>
+                                    <input type="text" class="form-control" id="zipCode" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-credit-card mr-2"></i>Payment Information</h4>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" class="form-control" id="cardName" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-place-order">
+                        <i class="fas fa-lock mr-2"></i>Place Order Securely
+                    </button>
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="orderItems">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Shipping:</span>
+                        <span id="shipping">₹500</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Tax:</span>
+                        <span id="tax">₹0</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between total-amount">
+                        <span>Total:</span>
+                        <span id="total">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Nestori. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/load-components.js"></script>
+    <script>
+        // Load cart data from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderSummary();
+        });
+
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('nestoriCart') || '[]');
+            const orderItems = document.getElementById('orderItems');
+            let subtotal = 0;
+
+            orderItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                orderItems.innerHTML = '<p>Your cart is empty</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item-summary';
+                itemDiv.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>₹${item.price.toLocaleString()}</span>
+                `;
+                orderItems.appendChild(itemDiv);
+                subtotal += item.price;
+            });
+
+            const tax = Math.round(subtotal * 0.18); // 18% GST
+            const shipping = 500;
+            const total = subtotal + tax + shipping;
+
+            document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('tax').textContent = `₹${tax.toLocaleString()}`;
+            document.getElementById('total').textContent = `₹${total.toLocaleString()}`;
+        }
+
+        // Handle form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address', 'city', 'state', 'zipCode', 'cardNumber', 'expiryDate', 'cvv', 'cardName'];
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    element.classList.remove('is-invalid');
+                }
+            });
+
+            if (isValid) {
+                // Simulate order processing
+                alert('Order placed successfully! You will receive a confirmation email shortly.');
+                localStorage.removeItem('nestoriCart');
+                window.location.href = 'Shop.html';
+            }
+        });
+    </script>
+</body>
+</html>
