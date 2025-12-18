@@ -1,0 +1,113 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand {
+    font-family: "Monoton", sans-serif;
+    color: #54a464 !important;
+    font-weight: 400;
+}
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+.btn {
+    background-color: #54a464;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: #469055;
+    transform: scale(1.05);
+}
+.btn-outline-primary {
+    border-color: #54a464;
+    color: #54a464;
+}
+.btn-outline-primary:hover {
+    background-color: #54a464;
+    color: white;
+}
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.sidebar {
+    background: linear-gradient(135deg, #54a464, #6ed68a);
+    color: white;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 250px;
+    left: 0;
+    top: 56px;
+    z-index: 1000;
+}
+.sidebar .nav-link {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.sidebar .nav-link:hover {
+    color: #f8f9fa;
+    transform: translateX(5px);
+}
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    padding-top: 80px;
+}
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #54a464;
+}
+.stat-label {
+    color: #666;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+.section-subtitle {
+    color: #666;
+}
+footer {
+    background-color: #f8f9fa;
+    color: #666;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+        padding: 1rem;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    footer {
+        margin-left: 0;
+    }
+}
