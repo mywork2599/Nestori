@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Monoton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="components/auth-modal.css">
+    <link rel="stylesheet" href="verification.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_Nestori/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_Nestori/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_Nestori/favicon-16x16.png">
@@ -85,6 +86,72 @@
             </div>
         </div>
 
+        <!-- Landlord Verification Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="verification-header">
+                    <h5 class="card-title"><i class="fas fa-shield-alt"></i> Landlord Verification</h5>
+                    <div class="verification-badge" id="landlordPortalBadge">Basic</div>
+                </div>
+                <p>Complete your verification to unlock premium features and build trust with tenants.</p>
+
+                <div class="verification-step">
+                    <h6>1. KYC Verification</h6>
+                    <form id="landlordPortalKycForm" class="verification-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordAadhaar">Aadhaar Number</label>
+                                <input type="text" class="form-control" id="portalLandlordAadhaar" placeholder="Enter 12-digit Aadhaar" maxlength="12" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordPan">PAN Number</label>
+                                <input type="text" class="form-control" id="portalLandlordPan" placeholder="Enter PAN (e.g., ABCDE1234F)" maxlength="10" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Verify KYC</button>
+                    </form>
+                </div>
+
+                <div class="verification-step">
+                    <h6>2. Bank Account Verification</h6>
+                    <form id="landlordPortalBankForm" class="verification-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordAccount">Account Number</label>
+                                <input type="text" class="form-control" id="portalLandlordAccount" placeholder="Enter account number" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordIfsc">IFSC Code</label>
+                                <input type="text" class="form-control" id="portalLandlordIfsc" placeholder="Enter IFSC code" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="portalLandlordCheque">Cancelled Cheque</label>
+                            <input type="file" class="form-control-file" id="portalLandlordCheque" accept="image/*,.pdf" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Verify Bank</button>
+                    </form>
+                </div>
+
+                <div class="verification-step">
+                    <h6>3. Document Upload</h6>
+                    <form id="landlordPortalDocumentsForm" class="verification-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordSaleDeed">Sale Deed</label>
+                                <input type="file" class="form-control-file" id="portalLandlordSaleDeed" accept=".pdf,image/*" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="portalLandlordTaxReceipt">Property Tax Receipt</label>
+                                <input type="file" class="form-control-file" id="portalLandlordTaxReceipt" accept=".pdf,image/*" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Upload Documents</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <!-- Property Management Section -->
         <div class="row mb-4">
             <div class="col-md-6">
@@ -92,8 +159,15 @@
                     <div class="card-body">
                         <h5 class="card-title"><i class="fas fa-building"></i> Property Management</h5>
                         <p>View, add, and update your property listings.</p>
+                        <div class="property-verification-notice mb-3">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Property Verification Required:</strong> Landlords with 2+ properties must verify each property before listing.
+                                <a href="#propertyVerificationSection" class="alert-link">Learn more</a>
+                            </div>
+                        </div>
                         <button class="btn btn-primary">View Properties</button>
-                        <button class="btn btn-outline-primary">Add New Property</button>
+                        <button class="btn btn-outline-primary" onclick="showAddPropertyModal()">Add New Property</button>
                     </div>
                 </div>
             </div>
@@ -103,6 +177,151 @@
                         <h5 class="card-title"><i class="fas fa-users"></i> Tenant Management</h5>
                         <p>Manage tenant details, lease agreements, and communications.</p>
                         <button class="btn btn-primary">Manage Tenants</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Verification Section -->
+        <div id="propertyVerificationSection" class="card mb-4">
+            <div class="card-body">
+                <div class="verification-header">
+                    <h5 class="card-title"><i class="fas fa-home"></i> Property Verification</h5>
+                    <div class="verification-badge" id="propertyPortalBadge">Basic</div>
+                </div>
+                <p>Verify your property details to earn the "Verified" badge and attract more tenants. Required for landlords with multiple properties.</p>
+
+                <!-- Property Selection -->
+                <div class="verification-step">
+                    <h6>1. Select Property to Verify</h6>
+                    <form id="propertySelectionForm" class="verification-form">
+                        <div class="form-group">
+                            <label for="propertySelect">Choose Property</label>
+                            <select class="form-control" id="propertySelect" required>
+                                <option value="">Select a property</option>
+                                <option value="123-main-st">123 Main Street, Downtown</option>
+                                <option value="456-elm-st">456 Elm Street, Midtown</option>
+                                <option value="789-oak-ave">789 Oak Avenue, Uptown</option>
+                                <option value="new-property">New Property (Add First)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Start Verification</button>
+                    </form>
+                </div>
+
+                <!-- Legal Document Verification -->
+                <div class="verification-step">
+                    <h6>2. Legal Document Verification</h6>
+                    <form id="propertyPortalLegalForm" class="verification-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="portalPropertyOwnership">Proof of Ownership</label>
+                                <input type="file" class="form-control-file" id="portalPropertyOwnership" accept=".pdf,image/*" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="portalPropertyTax">Property Tax Receipt</label>
+                                <input type="file" class="form-control-file" id="portalPropertyTax" accept=".pdf,image/*" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="portalPropertyUtility">Utility Bill</label>
+                                <input type="file" class="form-control-file" id="portalPropertyUtility" accept=".pdf,image/*" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="portalPropertyOc">Occupancy Certificate</label>
+                                <input type="file" class="form-control-file" id="portalPropertyOc" accept=".pdf,image/*" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Upload Legal Documents</button>
+                    </form>
+                </div>
+
+                <!-- Live Photo/Video Verification -->
+                <div class="verification-step">
+                    <h6>3. Live Photo/Video Verification</h6>
+                    <form id="propertyPortalMediaForm" class="verification-form">
+                        <div class="form-group">
+                            <label for="portalPropertyPhoto">Take Live Photo</label>
+                            <input type="file" class="form-control-file" id="portalPropertyPhoto" accept="image/*" capture="environment" required>
+                            <small class="form-text text-muted">Take a live photo of your property exterior. GPS data will be verified.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="portalPropertyInterior">Interior Photos</label>
+                            <input type="file" class="form-control-file" id="portalPropertyInterior" accept="image/*" multiple required>
+                            <small class="form-text text-muted">Upload 3-5 photos of the interior (living room, bedroom, kitchen, bathroom).</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="portalPropertyVideo">Property Video (Optional)</label>
+                            <input type="file" class="form-control-file" id="portalPropertyVideo" accept="video/*" capture="environment">
+                            <small class="form-text text-muted">Record a short video tour of your property.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Upload Media</button>
+                    </form>
+                </div>
+
+                <!-- Physical Visit (Premium) -->
+                <div class="verification-step">
+                    <h6>4. Physical Visit (Premium - Highly Recommended)</h6>
+                    <div class="physical-visit-card">
+                        <h6>Nestori Elite Verification Badge</h6>
+                        <p>Get a professional Nestori agent to visit your property and provide comprehensive verification:</p>
+                        <ul class="list-unstyled">
+                            <li>✅ <strong>Detailed Property Inspection</strong> - Complete walkthrough and assessment</li>
+                            <li>✅ <strong>Amenity Verification</strong> - WiFi speed, water pressure, lift functionality</li>
+                            <li>✅ <strong>Condition Assessment</strong> - Overall property condition and maintenance needs</li>
+                            <li>✅ <strong>Professional Photography</strong> - High-quality photos for your listing</li>
+                            <li>✅ <strong>360° Virtual Tour</strong> - Immersive property viewing experience</li>
+                            <li>✅ <strong>"Nestori Elite" Badge</strong> - Premium verification badge on your listing</li>
+                            <li>✅ <strong>Priority Listing</strong> - Featured placement in search results</li>
+                        </ul>
+                        <div class="pricing-options mt-3">
+                            <div class="pricing-tier">
+                                <h6>Standard Visit</h6>
+                                <p class="price">₹1,499</p>
+                                <p class="text-muted">Basic inspection + photos</p>
+                                <button class="btn btn-warning btn-sm" onclick="scheduleVisit('standard')">Schedule Standard Visit</button>
+                            </div>
+                            <div class="pricing-tier featured">
+                                <h6>Premium Visit</h6>
+                                <p class="price">₹2,499</p>
+                                <p class="text-muted">Complete verification + virtual tour</p>
+                                <button class="btn btn-success btn-sm" onclick="scheduleVisit('premium')">Schedule Premium Visit</button>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <small class="text-muted">* Physical verification is mandatory for landlords with 3+ properties</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Status -->
+                <div class="verification-status mt-4">
+                    <h6>Verification Progress</h6>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                    <div class="verification-steps-completed">
+                        <div class="step-item completed">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Property Selected</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle text-muted"></i>
+                            <span>Legal Documents</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle text-muted"></i>
+                            <span>Media Upload</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle text-muted"></i>
+                            <span>Physical Visit (Optional)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-success" id="completePropertyVerification" style="display: none;">Complete Verification & List Property</button>
+                        <small class="text-muted">Complete all required steps to list your property</small>
                     </div>
                 </div>
             </div>
@@ -228,5 +447,151 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="components/auth-modal.js"></script>
+    <script src="verification.js"></script>
+    <script>
+        // Property Verification Functions for Landlord Portal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Property Selection Form
+            document.getElementById('propertySelectionForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button');
+                setLoading(button, true);
+
+                try {
+                    const propertySelect = document.getElementById('propertySelect').value;
+                    if (!propertySelect) {
+                        throw new Error('Please select a property');
+                    }
+
+                    showAlert('Property selected successfully! Proceed with verification steps.', 'success');
+                    updateVerificationBadge('propertyPortal', 'Basic');
+
+                    // Update progress
+                    updateVerificationProgress(25, ['Property Selected']);
+                } catch (error) {
+                    showAlert(error.message, 'danger');
+                } finally {
+                    setLoading(button, false);
+                }
+            });
+
+            // Property Legal Documents Form
+            document.getElementById('propertyPortalLegalForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button');
+                setLoading(button, true);
+
+                try {
+                    const formData = new FormData();
+                    const files = [
+                        { id: 'portalPropertyOwnership', name: 'ownership' },
+                        { id: 'portalPropertyTax', name: 'tax' },
+                        { id: 'portalPropertyUtility', name: 'utility' },
+                        { id: 'portalPropertyOc', name: 'oc' }
+                    ];
+
+                    files.forEach(({ id, name }) => {
+                        const file = document.getElementById(id).files[0];
+                        if (file) {
+                            validateFile(file);
+                            formData.append(name, file);
+                        }
+                    });
+
+                    const result = await uploadDocuments(formData);
+                    if (result.success) {
+                        showAlert('Legal documents uploaded successfully!', 'success');
+                        updateVerificationProgress(50, ['Property Selected', 'Legal Documents']);
+                    } else {
+                        showAlert(result.message || 'Document upload failed', 'danger');
+                    }
+                } catch (error) {
+                    showAlert(error.message, 'danger');
+                } finally {
+                    setLoading(button, false);
+                }
+            });
+
+            // Property Media Form
+            document.getElementById('propertyPortalMediaForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button');
+                setLoading(button, true);
+
+                try {
+                    const photoFile = document.getElementById('portalPropertyPhoto').files[0];
+                    const interiorFiles = document.getElementById('portalPropertyInterior').files;
+                    const videoFile = document.getElementById('portalPropertyVideo').files[0];
+
+                    if (photoFile) {
+                        validateFile(photoFile, ['image/jpeg', 'image/png']);
+                    }
+
+                    if (interiorFiles.length > 0) {
+                        for (let file of interiorFiles) {
+                            validateFile(file, ['image/jpeg', 'image/png']);
+                        }
+                    }
+
+                    if (videoFile) {
+                        validateFile(videoFile, ['video/mp4', 'video/quicktime']);
+                    }
+
+                    showAlert('Media uploaded successfully! GPS verification would be checked in production.', 'success');
+                    updateVerificationBadge('propertyPortal', 'Silver');
+                    updateVerificationProgress(75, ['Property Selected', 'Legal Documents', 'Media Upload']);
+
+                    // Show complete verification button
+                    document.getElementById('completePropertyVerification').style.display = 'block';
+                } catch (error) {
+                    showAlert(error.message, 'danger');
+                } finally {
+                    setLoading(button, false);
+                }
+            });
+
+            // Complete Property Verification
+            document.getElementById('completePropertyVerification').addEventListener('click', function() {
+                updateVerificationBadge('propertyPortal', 'Gold');
+                updateVerificationProgress(100, ['Property Selected', 'Legal Documents', 'Media Upload', 'Verification Complete']);
+                showAlert('Property verification completed successfully! Your property is now listed with a "Verified" badge.', 'success');
+                this.style.display = 'none';
+            });
+        });
+
+        // Helper function to update verification progress
+        function updateVerificationProgress(percentage, completedSteps) {
+            const progressBar = document.querySelector('.verification-status .progress-bar');
+            const stepsContainer = document.querySelector('.verification-steps-completed');
+
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+                progressBar.setAttribute('aria-valuenow', percentage);
+                progressBar.textContent = percentage + '%';
+            }
+
+            if (stepsContainer) {
+                const stepItems = stepsContainer.querySelectorAll('.step-item');
+                stepItems.forEach((item, index) => {
+                    if (completedSteps.includes(item.querySelector('span').textContent)) {
+                        item.classList.remove('pending');
+                        item.classList.add('completed');
+                        item.querySelector('i').className = 'fas fa-check-circle text-success';
+                    }
+                });
+            }
+        }
+
+        // Function to show add property modal (placeholder)
+        function showAddPropertyModal() {
+            showAlert('Add Property feature coming soon! For now, please contact support to add new properties.', 'info');
+        }
+
+        // Function to schedule physical visit
+        function scheduleVisit(type) {
+            const prices = { standard: '₹1,499', premium: '₹2,499' };
+            showAlert(`${type.charAt(0).toUpperCase() + type.slice(1)} visit scheduled for ${prices[type]}! Our agent will contact you within 24 hours.`, 'success');
+        }
+    </script>
 </body>
 </html>

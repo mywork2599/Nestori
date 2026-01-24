@@ -3,6 +3,7 @@ const cors = require('cors');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
+const { validateFile, verifyKYC, verifyBank, verifyBackground } = require('./verification');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
